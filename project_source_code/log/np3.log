@@ -1,0 +1,38 @@
+2026-08-28 10:37:21 | INFO | Loaded grid/hour analytics from curated_data\grid_hour_activity.csv: 240000 rows
+2026-08-28 10:37:21 | INFO | Input validation complete: 240000 rows
+2026-08-28 10:37:21 | INFO | Data-driven activity floor selected: 928.3506 (10th percentile of daily grid activity)
+2026-08-28 10:37:30 | INFO | Within-day leave-one-out median baseline created.
+2026-08-28 10:37:38 | INFO | Within-day leave-one-out median baseline created.
+2026-08-28 10:37:38 | INFO | Grid-days with complete 24-hour coverage: 10000
+2026-08-28 10:37:38 | WARNING | Grid-days with incomplete coverage: 0
+2026-08-28 10:37:38 | INFO | Excluded 23976 grid/hour rows below activity floor 928.3506
+2026-08-28 10:37:38 | INFO | Alert rules evaluated.
+2026-08-28 10:37:43 | INFO | Created 41121 alert records.
+2026-08-28 10:37:43 | INFO | Alerts written to: curated_data\activity_alerts.csv
+2026-08-28 10:37:43 | INFO | ========== NP3 OPERATIONAL SUMMARY ==========
+2026-08-28 10:37:43 | INFO | Total grid/hours: 240000
+2026-08-28 10:37:43 | INFO | Total alert records: 41121
+2026-08-28 10:37:43 | INFO | Grid/hours alerted: 39281
+2026-08-28 10:37:43 | INFO | Proportion alerted: 16.37%
+2026-08-28 10:37:43 | INFO | Alerts by type: {'ACTIVITY_DROP': 22477, 'HIGH_ACTIVITY': 13540, 'ACTIVITY_SPIKE': 5104}
+2026-08-28 10:37:43 | INFO | Top 10 grids by alert count: {7822: 29, 7823: 29, 7647: 28, 7724: 27, 1683: 27, 1583: 27, 3222: 26, 1684: 26, 8169: 26, 1584: 26}
+2026-08-28 10:37:43 | INFO | Activity floor: 928.3506
+2026-09-02 14:13:50 | INFO | Loaded grid/hour analytics from curated_data_all\grid_hour_activity.csv: 1679994 rows
+2026-09-02 14:13:50 | INFO | Input validation complete: 1679994 rows
+2026-09-02 14:13:51 | INFO | Data-driven activity floor selected: 1026.2647 (10th percentile of daily grid activity)
+2026-09-02 14:15:01 | INFO | Within-day leave-one-out median baseline created.
+2026-09-02 14:16:09 | INFO | Within-day leave-one-out median baseline created.
+2026-09-02 14:16:10 | INFO | Grid-days with complete 24-hour coverage: 69995
+2026-09-02 14:16:10 | WARNING | Grid-days with incomplete coverage: 5
+2026-09-02 14:16:10 | INFO | Excluded 167994 grid/hour rows below activity floor 1026.2647
+2026-09-02 14:16:10 | INFO | Alert rules evaluated.
+2026-09-02 14:16:49 | INFO | Created 465877 alert records.
+2026-09-02 14:16:50 | INFO | Alerts written to: curated_data_all\activity_alerts.csv
+2026-09-02 14:16:50 | INFO | ========== NP3 OPERATIONAL SUMMARY ==========
+2026-09-02 14:16:50 | INFO | Total grid/hours: 1679994
+2026-09-02 14:16:50 | INFO | Total alert records: 465877
+2026-09-02 14:16:50 | INFO | Grid/hours alerted: 450437
+2026-09-02 14:16:50 | INFO | Proportion alerted: 26.81%
+2026-09-02 14:16:50 | INFO | Alerts by type: {'ACTIVITY_DROP': 277065, 'HIGH_ACTIVITY': 126864, 'ACTIVITY_SPIKE': 61948}
+2026-09-02 14:16:50 | INFO | Top 10 grids by alert count: {7822: 188, 7724: 187, 7823: 186, 8169: 183, 7722: 180, 7723: 179, 7725: 179, 7626: 177, 7824: 177, 7624: 175}
+2026-09-02 14:16:50 | INFO | Activity floor: 1026.2647

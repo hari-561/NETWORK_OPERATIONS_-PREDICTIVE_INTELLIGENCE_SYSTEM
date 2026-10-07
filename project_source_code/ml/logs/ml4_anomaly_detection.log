@@ -1,0 +1,155 @@
+2026-09-05 16:23:06,816 | INFO | ======================================================================
+2026-09-05 16:23:06,817 | INFO | ML4 - Historical Behaviour Anomaly Detection
+2026-09-05 16:23:06,818 | INFO | ======================================================================
+2026-09-05 16:23:06,819 | INFO | ML4 configuration initialized.
+2026-09-05 16:23:06,820 | INFO | Baseline=median, keys=['grid_id', 'hour_of_day'], min_history=3, threshold=±50%
+2026-09-05 16:24:08,986 | INFO | ======================================================================
+2026-09-05 16:24:08,988 | INFO | ML4 CELL 2 - Loading curated network activity
+2026-09-05 16:24:08,990 | INFO | ======================================================================
+2026-09-05 16:24:09,083 | INFO | MySQL SQLAlchemy engine created.
+2026-09-05 16:24:09,084 | INFO | Executing activity query...
+2026-09-05 16:24:43,057 | INFO | ======================================================================
+2026-09-05 16:24:43,058 | INFO | ML4 - Historical Behaviour Anomaly Detection
+2026-09-05 16:24:43,059 | INFO | ======================================================================
+2026-09-05 16:24:43,061 | INFO | ML4 configuration initialized.
+2026-09-05 16:24:43,062 | INFO | Baseline=median, keys=['grid_id', 'hour_of_day'], min_history=3, threshold=±50%
+2026-09-05 16:24:47,626 | INFO | ======================================================================
+2026-09-05 16:24:47,629 | INFO | ML4 CELL 2 - Loading curated network activity
+2026-09-05 16:24:47,630 | INFO | ======================================================================
+2026-09-05 16:24:47,632 | INFO | MySQL SQLAlchemy engine created.
+2026-09-05 16:24:47,633 | INFO | Executing activity query...
+2026-09-05 16:27:40,939 | INFO | Loaded 1,679,994 activity rows.
+2026-09-05 16:27:41,224 | INFO | ML4 activity validation completed.
+2026-09-05 16:29:07,069 | INFO | ======================================================================
+2026-09-05 16:29:07,070 | INFO | ML4 CELL 3 - Validating temporal structure
+2026-09-05 16:29:07,072 | INFO | ======================================================================
+2026-09-05 16:29:07,204 | INFO | Activity data sorted by grid_id and timestamp.
+2026-09-05 16:29:07,723 | INFO | Hour-of-day validation passed: 0 mismatches.
+2026-09-05 16:29:07,726 | INFO | Found 240,000 grid/hour buckets.
+2026-09-05 16:29:07,729 | INFO | Bucket observation range: 4-7
+2026-09-05 16:29:07,730 | INFO | Buckets with fewer than 3 historical observations: 0
+2026-09-05 16:29:07,731 | WARNING | Detected 5 unexpected timestamp gaps.
+2026-09-05 16:29:07,732 | INFO | ML4 temporal validation completed successfully.
+2026-09-05 16:30:20,108 | INFO | ======================================================================
+2026-09-05 16:30:20,109 | INFO | ML4 CELL 4 - Building generalized baseline function
+2026-09-05 16:30:20,110 | INFO | ======================================================================
+2026-09-05 16:30:20,112 | INFO | Computing historical baseline: statistic=median, bucket_columns=['grid_id', 'hour_of_day'], min_history_count=3
+2026-09-05 16:31:24,062 | INFO | Historical baseline calculation completed.
+2026-09-05 16:31:24,067 | INFO | Rows with valid baseline: 1,439,994
+2026-09-05 16:31:24,072 | INFO | Rows without sufficient history: 240,000
+2026-09-05 16:31:24,075 | INFO | Baseline count range: 3-6
+2026-09-05 16:31:24,102 | INFO | ML4 generalized baseline successfully applied using grid_id + hour_of_day.
+2026-09-05 16:34:18,515 | INFO | ======================================================================
+2026-09-05 16:34:18,517 | INFO | ML4 CELL 5 - Validating historical baseline integrity
+2026-09-05 16:34:18,518 | INFO | ======================================================================
+2026-09-05 16:34:18,669 | INFO | Rows available for baseline validation: 1,439,994
+2026-09-05 16:36:19,899 | INFO | ======================================================================
+2026-09-05 16:36:19,900 | INFO | ML4 CELL 5 - Corrected baseline integrity validation
+2026-09-05 16:36:19,901 | INFO | ======================================================================
+2026-09-05 16:40:27,361 | INFO | ======================================================================
+2026-09-05 16:40:27,363 | INFO | ML4 CELL 5 - Final baseline integrity validation
+2026-09-05 16:40:27,365 | INFO | ======================================================================
+2026-09-05 16:41:46,094 | INFO | ======================================================================
+2026-09-05 16:41:46,096 | INFO | ML4 CELL 4 - Rebuilding generalized baseline
+2026-09-05 16:41:46,097 | INFO | ======================================================================
+2026-09-05 16:42:47,374 | INFO | Historical median baseline calculated.
+2026-09-05 16:42:47,380 | INFO | Valid baselines: 1,439,994
+2026-09-05 16:42:47,385 | INFO | Missing baselines: 240,000
+2026-09-05 16:42:47,388 | INFO | Baseline count range: 3 → 6
+2026-09-05 16:42:47,415 | INFO | ML4 generalized baseline rebuilt successfully.
+2026-09-05 16:42:54,224 | INFO | ======================================================================
+2026-09-05 16:42:54,226 | INFO | ML4 CELL 5 - Final baseline integrity validation
+2026-09-05 16:42:54,228 | INFO | ======================================================================
+2026-09-05 16:46:34,733 | INFO | ======================================================================
+2026-09-05 16:46:34,734 | INFO | ML4 CELL 4 - Final historical baseline calculation
+2026-09-05 16:46:34,735 | INFO | ======================================================================
+2026-09-05 16:46:34,876 | INFO | Activity data sorted by grid_id, hour_of_day and timestamp.
+2026-09-05 16:47:58,323 | INFO | Historical count structure validated.
+2026-09-05 16:47:58,325 | INFO | Minimum-history requirement validated.
+2026-09-05 16:47:58,326 | INFO | ML4 CELL 4 FINAL completed successfully.
+2026-09-05 16:48:57,016 | INFO | ======================================================================
+2026-09-05 16:48:57,018 | INFO | ML4 CELL 5 - Final baseline integrity validation
+2026-09-05 16:48:57,021 | INFO | ======================================================================
+2026-09-05 16:49:15,550 | INFO | Baseline count validation PASSED.
+2026-09-05 16:49:15,553 | INFO | Minimum-history validation PASSED.
+2026-09-05 16:49:15,555 | INFO | Independent median validation PASSED.
+2026-09-05 16:49:15,558 | INFO | ML4 baseline integrity is confirmed.
+2026-09-05 16:49:15,595 | INFO | ML4 CELL 5 FINAL completed successfully.
+2026-09-05 16:53:36,453 | INFO | ======================================================================
+2026-09-05 16:53:36,455 | INFO | ML4 CELL 6 - Calculating deviation and anomaly score
+2026-09-05 16:53:36,456 | INFO | ======================================================================
+2026-09-05 16:53:36,482 | INFO | Valid baseline rows: 959,994
+2026-09-05 16:53:36,484 | INFO | Valid rows with zero baseline: 0
+2026-09-05 16:53:36,768 | INFO | Deviation calculation independently validated.
+2026-09-05 16:53:36,769 | INFO | Anomaly score calculation validated.
+2026-09-05 16:53:36,769 | INFO | ML4 CELL 6 completed successfully.
+2026-09-05 16:55:28,147 | INFO | ======================================================================
+2026-09-05 16:55:28,149 | INFO | ML4 CELL 7 - Classifying anomaly direction
+2026-09-05 16:55:28,149 | INFO | ======================================================================
+2026-09-05 16:55:28,410 | INFO | HIGH anomalies: 174,321
+2026-09-05 16:55:28,412 | INFO | LOW anomalies: 7,888
+2026-09-05 16:55:28,414 | INFO | NORMAL observations: 777,785
+2026-09-05 16:55:28,416 | INFO | UNKNOWN observations: 720,000
+2026-09-05 16:55:28,420 | INFO | ML4 anomaly direction and flag validation passed.
+2026-09-05 16:55:28,421 | INFO | ML4 CELL 7 completed successfully.
+2026-09-05 16:56:37,871 | INFO | ======================================================================
+2026-09-05 16:56:37,872 | INFO | ML4 CELL 8 - Generating human-readable anomaly reasons
+2026-09-05 16:56:37,872 | INFO | ======================================================================
+2026-09-05 16:56:52,135 | INFO | Human-readable anomaly reasons generated successfully.
+2026-09-05 16:56:52,137 | INFO | Anomaly rows requiring investigation: 182,209
+2026-09-05 16:56:52,138 | INFO | ML4 CELL 8 completed successfully.
+2026-09-05 16:57:38,104 | INFO | ======================================================================
+2026-09-05 16:57:38,106 | INFO | ML4 CELL 9 - Preparing ML3 comparison data
+2026-09-05 16:57:38,107 | INFO | ======================================================================
+2026-09-05 16:58:53,798 | INFO | ======================================================================
+2026-09-05 16:58:53,799 | INFO | ML4 CELL 9A - Checking saved ML3 artifacts
+2026-09-05 16:58:53,799 | INFO | ======================================================================
+2026-09-05 16:58:53,801 | INFO | ML3 artifact existence check completed.
+2026-09-05 16:58:53,801 | INFO | All required ML3 artifacts are available.
+2026-09-05 16:59:49,619 | INFO | ======================================================================
+2026-09-05 16:59:49,621 | INFO | ML4 CELL 9B - Reloading finalized ML3 artifacts
+2026-09-05 16:59:49,622 | INFO | ======================================================================
+2026-09-05 16:59:49,756 | INFO | ML3 metadata loaded.
+2026-09-05 16:59:49,758 | INFO | Loading finalized ML3 engineered dataset...
+2026-09-05 16:59:51,660 | INFO | Loaded ML3 dataset: 1,199,884 rows
+2026-09-05 16:59:51,660 | INFO | Loading saved ML3 Decision Tree...
+2026-09-05 16:59:53,985 | INFO | Saved ML3 Decision Tree loaded successfully.
+2026-09-05 17:02:02,401 | INFO | Reloading saved ML3 artifacts for ML4 comparison...
+2026-09-05 17:02:04,160 | INFO | ML3 dataset loaded: rows=1199884, columns=14
+2026-09-05 17:14:10,124 | INFO | Reloading saved ML3 artifacts for ML4 comparison...
+2026-09-05 17:14:12,053 | INFO | ML3 dataset loaded: rows=1199884, columns=14
+2026-09-05 17:14:12,093 | INFO | feature_timestamp dtype after conversion: datetime64[us]
+2026-09-05 17:14:12,095 | INFO | ML3 model loaded successfully: DecisionTreeClassifier
+2026-09-05 17:14:12,096 | INFO | All ML3 model features are present.
+2026-09-05 17:14:12,097 | INFO | ML3 test period: 2013-11-06 23:00:00 to 2013-11-07 22:00:00
+2026-09-05 17:14:12,142 | INFO | ML3 test rows recovered: 239976
+2026-09-05 17:14:12,144 | INFO | ML3 test row count validated successfully.
+2026-09-05 17:14:12,242 | INFO | ML3 predictions generated: positive=45455, negative=194521
+2026-09-05 17:14:12,276 | INFO | ML3 alignment validation passed: 239976 rows.
+2026-09-05 17:14:12,279 | INFO | ML3 comparison dataframe ready: 239976 rows, 9999 grids.
+2026-09-05 17:16:11,611 | INFO | Starting ML4 vs ML3 comparison...
+2026-09-05 17:16:11,804 | INFO | Timestamp dtypes — ML4: datetime64[us] | ML3: datetime64[us]
+2026-09-05 17:16:11,920 | INFO | ML4 and ML3 uniqueness checks passed.
+2026-09-05 17:16:12,346 | INFO | ML4 vs ML3 aligned rows: 239976
+2026-09-05 17:16:15,555 | INFO | ML4 vs ML3 comparison completed successfully.
+2026-09-05 17:17:44,986 | INFO | Starting ML3 vs ML4 disagreement analysis...
+2026-09-05 17:18:49,468 | INFO | Starting ML3 vs ML4 disagreement analysis...
+2026-09-05 17:19:44,794 | INFO | Starting ML3 vs ML4 disagreement analysis...
+2026-09-05 17:20:56,036 | INFO | Starting ML3 vs ML4 disagreement analysis...
+2026-09-05 17:20:56,660 | INFO | ML3/ML4 aligned rows: 239976
+2026-09-05 17:20:59,408 | INFO | ML3 vs ML4 disagreement analysis completed successfully.
+2026-09-05 17:22:54,139 | INFO | Loading NP3 alerts for ML4 comparison...
+2026-09-05 17:25:40,114 | INFO | Loading NP3 alerts from activity_alerts...
+2026-09-05 17:25:40,116 | INFO | Using existing SQLAlchemy MySQL engine.
+2026-09-05 17:25:44,146 | INFO | NP3 alerts loaded successfully: 188812 rows.
+2026-09-05 17:26:20,458 | INFO | Starting ML4 vs NP3 comparison...
+2026-09-05 17:26:20,588 | INFO | ML4 rows in comparison period: 239999
+2026-09-05 17:26:23,308 | INFO | ML4 vs NP3 comparison completed successfully.
+2026-09-05 17:28:03,522 | INFO | Starting three-way ML3 / ML4 / NP3 comparison...
+2026-09-05 17:28:07,035 | INFO | Three-way ML3 / ML4 / NP3 comparison completed successfully.
+2026-09-05 17:29:58,173 | INFO | Selecting representative ML3/ML4/NP3 disagreements...
+2026-09-05 17:29:58,271 | INFO | Representative disagreement analysis completed.
+2026-09-05 17:30:18,661 | INFO | Saving final ML4 anomaly dataset...
+2026-09-05 17:30:28,550 | INFO | Final ML4 dataset saved successfully: 322.71 MB
+2026-09-05 17:31:02,349 | INFO | Creating final ML4 metadata...
+2026-09-05 17:31:02,578 | INFO | ML4 metadata saved successfully: 7.15 KB

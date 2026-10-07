@@ -1,0 +1,96 @@
+2026-08-27 18:32:46 | INFO | ============================================================
+2026-08-27 18:32:46 | INFO | SP3 START
+2026-08-27 18:32:46 | INFO | ============================================================
+2026-08-27 18:32:54 | INFO | SP2 input rows: 15089165
+2026-08-27 18:32:54 | ERROR | Missing required columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out']
+2026-08-27 18:32:54 | INFO | Closing down clientserver connection
+2026-08-27 18:37:33 | INFO | ============================================================
+2026-08-27 18:37:33 | INFO | SP3 START
+2026-08-27 18:37:33 | INFO | ============================================================
+2026-08-27 18:37:36 | INFO | SP2 input rows: 15089165
+2026-08-27 18:37:36 | INFO | Required input columns verified successfully
+2026-08-27 18:37:37 | INFO | Closing down clientserver connection
+2026-08-27 18:43:39 | INFO | ============================================================
+2026-08-27 18:43:39 | INFO | SP3 START
+2026-08-27 18:43:39 | INFO | ============================================================
+2026-08-27 18:43:41 | INFO | SP2 input rows: 15089165
+2026-08-27 18:43:41 | INFO | Required input columns verified successfully
+2026-08-27 18:43:42 | INFO | Country-code records consolidated to timestamp + grid_id grain
+2026-08-27 18:43:47 | INFO | Duplicate grid + timestamp records: 0
+2026-08-27 18:43:47 | INFO | Grid + timestamp grain check: PASS
+2026-08-27 18:43:58 | INFO | Created daily_traffic_summary
+2026-08-27 18:43:58 | INFO | Daily traffic summary rows: 70000
+2026-08-27 18:44:10 | INFO | Created hourly_grid_summary
+2026-08-27 18:44:10 | INFO | Hourly grid summary rows: 1679994
+2026-08-27 18:44:13 | INFO | Final duplicate grid-hour records: 0
+2026-08-27 18:44:13 | INFO | Final hourly_grid_summary grain check: PASS
+2026-08-27 18:45:40 | INFO | Created hotspot ranking
+2026-08-27 18:45:40 | INFO | Hotspot ranking contains top 10 high-activity grids
+2026-08-27 18:47:14 | INFO | Computed peak activity hour for each grid
+2026-08-27 18:47:16 | INFO | Overall peak activity: {'grid_id': '5161', 'timestamp': '2013-11-02 16:00:00', 'total_activity': 37981.7792}
+2026-08-27 18:49:35 | INFO | Unique grids in hourly_grid_summary: 10000
+2026-08-27 18:50:20 | INFO | Unique hourly timestamps: 168
+2026-08-27 18:50:22 | INFO | Negative aggregated activity rows: 0
+2026-08-27 18:50:22 | INFO | Negative activity check: PASS
+2026-08-27 18:50:24 | INFO | SP3 grain check: PASS
+2026-08-27 18:50:24 | INFO | SP3 negative activity check: PASS
+2026-08-27 18:50:24 | INFO | SP3 status: PASS
+2026-08-27 18:50:24 | INFO | ============================================================
+2026-08-27 18:50:24 | INFO | SP3 FINAL SUMMARY
+2026-08-27 18:50:24 | INFO | ============================================================
+2026-08-27 18:50:24 | INFO | SP2 input rows: 15089165
+2026-08-27 18:50:24 | INFO | hourly_grid_summary rows: 1679994
+2026-08-27 18:50:24 | INFO | daily_traffic_summary rows: 70000
+2026-08-27 18:50:24 | INFO | Unique grids: 10000
+2026-08-27 18:50:24 | INFO | Unique hourly timestamps: 168
+2026-08-27 18:50:24 | INFO | Duplicate grid-hour records: 0
+2026-08-27 18:50:24 | INFO | Negative activity records: 0
+2026-08-27 18:50:24 | INFO | Expected output 1: hourly_grid_summary - CREATED
+2026-08-27 18:50:24 | INFO | Expected output 2: daily_traffic_summary - CREATED
+2026-08-27 18:50:24 | INFO | Expected output 3: hotspot ranking - CREATED
+2026-08-27 18:50:24 | INFO | SP3 completed with status: PASS
+2026-08-27 18:50:24 | INFO | ============================================================
+2026-08-27 18:50:29 | INFO | Closing down clientserver connection
+2026-08-27 18:56:35 | INFO | ============================================================
+2026-08-27 18:56:35 | INFO | SP3 START
+2026-08-27 18:56:35 | INFO | ============================================================
+2026-08-27 18:56:38 | INFO | SP2 input rows: 15089165
+2026-08-27 18:56:38 | INFO | Required input columns verified successfully
+2026-08-27 18:56:38 | INFO | Country-code records consolidated to timestamp + grid_id grain
+2026-08-27 18:56:42 | INFO | Duplicate grid + timestamp records: 0
+2026-08-27 18:56:42 | INFO | Grid + timestamp grain check: PASS
+2026-08-27 18:56:51 | INFO | Created daily_traffic_summary
+2026-08-27 18:56:51 | INFO | Daily traffic summary rows: 70000
+2026-08-27 18:57:00 | INFO | Created hourly_grid_summary
+2026-08-27 18:57:00 | INFO | Hourly grid summary rows: 1679994
+2026-08-27 18:57:03 | INFO | Final duplicate grid-hour records: 0
+2026-08-27 18:57:03 | INFO | Final hourly_grid_summary grain check: PASS
+2026-08-27 18:58:00 | INFO | Created hotspot ranking
+2026-08-27 18:58:00 | INFO | Hotspot ranking contains top 10 high-activity grids
+2026-08-27 18:59:00 | INFO | Computed peak activity hour for each grid
+2026-08-27 18:59:01 | INFO | Overall peak activity: {'grid_id': '5161', 'timestamp': '2013-11-02 16:00:00', 'total_activity': 37981.7792}
+2026-08-27 18:59:53 | INFO | Unique grids in hourly_grid_summary: 10000
+2026-08-27 19:00:26 | INFO | Unique hourly timestamps: 168
+2026-08-27 19:00:28 | INFO | Negative aggregated activity rows: 0
+2026-08-27 19:00:28 | INFO | Negative activity check: PASS
+2026-08-27 19:00:29 | INFO | SP3 grain check: PASS
+2026-08-27 19:00:29 | INFO | SP3 negative activity check: PASS
+2026-08-27 19:00:29 | INFO | SP3 status: PASS
+2026-08-27 19:00:29 | INFO | ============================================================
+2026-08-27 19:00:29 | INFO | SP3 FINAL SUMMARY
+2026-08-27 19:00:29 | INFO | ============================================================
+2026-08-27 19:00:29 | INFO | SP2 input rows: 15089165
+2026-08-27 19:00:29 | INFO | hourly_grid_summary rows: 1679994
+2026-08-27 19:00:29 | INFO | daily_traffic_summary rows: 70000
+2026-08-27 19:00:29 | INFO | Unique grids: 10000
+2026-08-27 19:00:29 | INFO | Unique hourly timestamps: 168
+2026-08-27 19:00:29 | INFO | Duplicate grid-hour records: 0
+2026-08-27 19:00:29 | INFO | Negative activity records: 0
+2026-08-27 19:00:29 | INFO | Expected output 1: hourly_grid_summary - CREATED
+2026-08-27 19:00:29 | INFO | Expected output 2: daily_traffic_summary - CREATED
+2026-08-27 19:00:29 | INFO | Expected output 3: hotspot ranking - CREATED
+2026-08-27 19:00:29 | INFO | SP3 completed with status: PASS
+2026-08-27 19:00:29 | INFO | ============================================================
+2026-08-27 19:07:24 | INFO | hourly_grid_summary written successfully
+2026-08-27 19:09:49 | INFO | daily_traffic_summary written successfully
+2026-08-27 19:09:49 | INFO | Closing down clientserver connection

@@ -1,0 +1,66 @@
+2026-08-27 21:45:21 | INFO | ============================================================
+2026-08-27 21:45:21 | INFO | SP5 START
+2026-08-27 21:45:21 | INFO | ============================================================
+2026-08-27 21:45:22 | INFO | Required SP3/SP4 DataFrames are available
+2026-08-27 21:45:24 | INFO | Hourly grid rows: 1679994
+2026-08-27 21:45:24 | INFO | Initial hourly_grid_summary partitions: 14
+2026-08-27 21:45:25 | INFO | Hotspot aggregation physical plan inspected
+2026-08-27 21:45:25 | INFO | Hotspot aggregation is expected to contain a partial aggregation followed by a shuffle/exchange and final aggregation because grid_id is the grouping key
+2026-08-27 21:45:25 | INFO | The orderBy on aggregated activity introduces a sorting stage for ranking the top grids
+2026-08-27 21:45:25 | INFO | Uncached action 1: 0.3986 seconds
+2026-08-27 21:45:26 | INFO | Uncached action 2: 0.3074 seconds
+2026-08-27 21:45:26 | INFO | Uncached repeated action timings: action1=0.3986 sec, action2=0.3074 sec
+2026-08-27 21:45:27 | INFO | Cache materialization time: 1.7054 seconds
+2026-08-27 21:45:28 | INFO | Cached action 1: 0.2454 seconds
+2026-08-27 21:45:28 | INFO | Cached action 2: 0.2410 seconds
+2026-08-27 21:45:28 | INFO | Cached repeated action timings: action1=0.2454 sec, action2=0.2410 sec
+2026-08-27 21:45:28 | INFO | Cache correctness check: PASS
+2026-08-27 21:45:28 | INFO | Average uncached action time: 0.3530 seconds
+2026-08-27 21:45:28 | INFO | Average cached action time: 0.2432 seconds
+2026-08-27 21:45:28 | INFO | Approximate cache speedup: 1.45x
+2026-08-27 21:45:28 | INFO | Partitions before repartition by date: 14
+2026-08-27 21:45:28 | INFO | Partitions after repartition by date: 7
+2026-08-27 21:45:29 | INFO | Repartitioned row count: 1679994
+2026-08-27 21:45:29 | INFO | Repartition action time: 0.6279 seconds
+2026-08-27 21:45:29 | INFO | Repartition row preservation check: PASS
+2026-08-27 21:45:39 | INFO | Repartition distribution: non_empty=7, empty=0, largest=240000, smallest_non_empty=239998
+2026-08-27 21:45:39 | INFO | Column pruning demonstration: before=13 columns, after=2 columns
+2026-08-27 21:45:39 | INFO | Column-pruned hotspot aggregation plan inspected
+2026-08-27 21:45:39 | INFO | Standard grid lookup join plan inspected
+2026-08-27 21:45:39 | INFO | Broadcast grid lookup join plan inspected
+2026-08-27 21:45:39 | INFO | Grid lookup size: 10000 rows
+2026-08-27 21:45:39 | INFO | Activity dataset size: 1679994 rows
+2026-08-27 21:45:39 | INFO | Broadcast candidate evidence: grid lookup is substantially smaller than activity dataset
+2026-08-27 21:45:40 | INFO | Standard join timing: 0.7009 seconds
+2026-08-27 21:45:40 | INFO | Broadcast join timing: 0.2800 seconds
+2026-08-27 21:45:40 | INFO | Standard vs broadcast join row-count check: PASS
+2026-08-27 21:45:40 | INFO | Current partitions: 14
+2026-08-27 21:45:40 | INFO | Over-partitioning experiment target: 140
+2026-08-27 21:45:42 | INFO | Actual over-partitioned partition count: 140
+2026-08-27 21:45:44 | INFO | Over-partitioned action time: 1.9684 seconds
+2026-08-27 21:45:44 | INFO | Over-partitioned row preservation check: PASS
+2026-08-27 21:45:44 | INFO | PERFORMANCE OBSERVATION 1 - CACHE: Caching improved repeated-action performance. Average uncached time was 0.3530s versus 0.2432s after caching.
+2026-08-27 21:45:44 | INFO | PERFORMANCE OBSERVATION 2 - REPARTITIONING: Repartitioning by date changed the partition count from 14 to 7. The repartition action took 0.6279s and preserved all 1679994 rows. The evidence shows that repartitioning introduces an execution cost and should be used when the resulting partition layout benefits downstream operations.
+2026-08-27 21:45:44 | INFO | PERFORMANCE OBSERVATION 3 - BROADCAST: Broadcast join was faster than the standard join in this run: 0.2800s versus 0.7009s. The grid lookup contains 10000 rows compared with 1679994 activity rows, making it a strong broadcast candidate.
+2026-08-27 21:45:44 | INFO | COLUMN PRUNING OBSERVATION: The hotspot aggregation requires only grid_id and total_activity. The demonstration reduced the input from 13 columns to 2 columns before aggregation, reducing the amount of data that needs to be carried through the aggregation pipeline.
+2026-08-27 21:45:44 | INFO | OVER-PARTITIONING OBSERVATION: Increasing partitions from 14 to 140 creates additional task and scheduling overhead. On a small local dataset, too many tiny partitions can cost more than the parallelism they provide.
+2026-08-27 21:45:44 | INFO | Performance principle: partition count should be large enough to provide useful parallelism but not so large that task scheduling and partition management dominate execution.
+2026-08-27 21:45:44 | INFO | ============================================================
+2026-08-27 21:45:44 | INFO | SP5 FINAL SUMMARY
+2026-08-27 21:45:44 | INFO | ============================================================
+2026-08-27 21:45:44 | INFO | Hotspot aggregation physical plan: INSPECTED
+2026-08-27 21:45:44 | INFO | Cache experiment: COMPLETED
+2026-08-27 21:45:44 | INFO | Repartition experiment: COMPLETED
+2026-08-27 21:45:44 | INFO | Column pruning experiment: COMPLETED
+2026-08-27 21:45:44 | INFO | Standard join plan: INSPECTED
+2026-08-27 21:45:44 | INFO | Broadcast join plan: INSPECTED
+2026-08-27 21:45:44 | INFO | Over-partitioning experiment: COMPLETED
+2026-08-27 21:45:44 | INFO | Performance observation 1: CACHE - RECORDED
+2026-08-27 21:45:44 | INFO | Performance observation 2: REPARTITIONING - RECORDED
+2026-08-27 21:45:44 | INFO | Performance observation 3: BROADCAST - RECORDED
+2026-08-27 21:45:44 | INFO | Additional observation: COLUMN PRUNING - RECORDED
+2026-08-27 21:45:44 | INFO | Additional observation: OVER-PARTITIONING - RECORDED
+2026-08-27 21:45:44 | INFO | SP5 completed successfully
+2026-08-27 21:45:44 | INFO | ============================================================
+2026-08-27 21:45:44 | INFO | Cached DataFrame unpersisted after SP5 experiments
+2026-08-27 21:45:49 | INFO | Closing down clientserver connection

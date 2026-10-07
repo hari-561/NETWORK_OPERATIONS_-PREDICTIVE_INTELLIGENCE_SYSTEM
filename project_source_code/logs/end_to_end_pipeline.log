@@ -1,0 +1,552 @@
+2026-09-03 05:10:51 | INFO | ============================================================
+2026-09-03 05:10:51 | INFO | TELECOM PIPELINE START
+2026-09-03 05:10:51 | INFO | Start time: 2026-09-03 05:10:51.495834
+2026-09-03 05:10:51 | INFO | ============================================================
+2026-09-03 05:10:57 | INFO | SparkSession created
+2026-09-03 05:10:57 | INFO | Starting read_raw()
+2026-09-03 05:10:57 | INFO | Input files found: 7
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 05:10:57 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 05:11:03 | INFO | Raw input rows: 15089165
+2026-09-03 05:11:03 | INFO | read_raw() completed
+2026-09-03 05:11:03 | INFO | Starting clean()
+2026-09-03 05:11:10 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 05:11:11 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 05:11:11 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 05:11:11 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 05:11:11 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 05:11:11 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 05:11:18 | INFO | Rejected rows: 0
+2026-09-03 05:11:31 | INFO | Cleaned rows: 15089165
+2026-09-03 05:11:31 | INFO | Null activity values handled: 48562194
+2026-09-03 05:11:31 | INFO | clean() completed
+2026-09-03 05:11:31 | INFO | Starting aggregate()
+2026-09-03 05:11:43 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 05:11:53 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 05:11:53 | INFO | aggregate() completed
+2026-09-03 05:11:53 | INFO | Starting enrich()
+2026-09-03 05:11:54 | INFO | Grid lookup rows: 10000
+2026-09-03 05:12:24 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 05:12:24 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 05:12:24 | INFO | Grids missing geometry: 0
+2026-09-03 05:12:24 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 05:12:33 | INFO | Unmatched grid IDs: 0
+2026-09-03 05:12:33 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 05:12:33 | INFO | enrich() completed
+2026-09-03 05:12:33 | INFO | Starting write_outputs()
+2026-09-03 05:12:33 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 05:12:33 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 05:12:33 | INFO | Clean activity schema:
+2026-09-03 05:13:55 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 05:13:55 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 05:14:10 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 05:14:12 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 05:14:15 | INFO | Clean output rows: 15089165
+2026-09-03 05:14:15 | INFO | Expected clean rows: 15089165
+2026-09-03 05:14:15 | INFO | Hourly output rows: 1679994
+2026-09-03 05:14:15 | INFO | Expected hourly rows: 1679994
+2026-09-03 05:14:15 | INFO | Parquet read-back validation: PASS
+2026-09-03 05:14:15 | INFO | write_outputs() completed
+2026-09-03 05:14:15 | INFO | Input rows: 15089165
+2026-09-03 05:14:15 | INFO | Rejected rows: 0
+2026-09-03 05:14:15 | INFO | Activity nulls handled: 48562194
+2026-09-03 05:14:15 | INFO | Output rows: 1679994
+2026-09-03 05:14:15 | INFO | End time: 2026-09-03 05:14:15.905656
+2026-09-03 05:14:15 | INFO | Duration seconds: 204.41
+2026-09-03 05:14:15 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 05:14:15 | INFO | ============================================================
+2026-09-03 05:14:16 | INFO | SparkSession stopped
+2026-09-03 05:14:16 | INFO | Closing down clientserver connection
+2026-09-03 05:31:13 | INFO | ============================================================
+2026-09-03 05:31:13 | INFO | TELECOM PIPELINE START
+2026-09-03 05:31:13 | INFO | Start time: 2026-09-03 05:31:13.178291
+2026-09-03 05:31:13 | INFO | ============================================================
+2026-09-03 05:31:17 | INFO | SparkSession created
+2026-09-03 05:31:17 | INFO | Starting read_raw()
+2026-09-03 05:31:17 | INFO | Input files found: 7
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 05:31:17 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 05:31:22 | INFO | Raw input rows: 15089165
+2026-09-03 05:31:22 | INFO | read_raw() completed
+2026-09-03 05:31:22 | INFO | Starting clean()
+2026-09-03 05:31:28 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 05:31:28 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 05:31:28 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 05:31:28 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 05:31:28 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 05:31:28 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 05:31:35 | INFO | Rejected rows: 0
+2026-09-03 05:31:49 | INFO | Cleaned rows: 15089165
+2026-09-03 05:31:49 | INFO | Null activity values handled: 48562194
+2026-09-03 05:31:49 | INFO | clean() completed
+2026-09-03 05:31:49 | INFO | Starting aggregate()
+2026-09-03 05:31:59 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 05:32:09 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 05:32:09 | INFO | aggregate() completed
+2026-09-03 05:32:09 | INFO | Starting enrich()
+2026-09-03 05:32:10 | INFO | Grid lookup rows: 10000
+2026-09-03 05:32:36 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 05:32:36 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 05:32:36 | INFO | Grids missing geometry: 0
+2026-09-03 05:32:36 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 05:32:45 | INFO | Unmatched grid IDs: 0
+2026-09-03 05:32:45 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 05:32:45 | INFO | enrich() completed
+2026-09-03 05:32:45 | INFO | Starting write_outputs()
+2026-09-03 05:32:45 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 05:32:45 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 05:32:45 | INFO | Clean activity schema:
+2026-09-03 05:34:00 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 05:34:00 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+
+======================================================================
+DE7 PIPELINE START: 2026-09-03T06:06:52.447946
+
+======================================================================
+DE7 PIPELINE START: 2026-09-03T06:09:41.314316
+2026-09-03 06:19:06 | INFO | ============================================================
+2026-09-03 06:19:06 | INFO | TELECOM PIPELINE START
+2026-09-03 06:19:06 | INFO | Start time: 2026-09-03 06:19:06.355190
+2026-09-03 06:19:06 | INFO | ============================================================
+2026-09-03 06:19:12 | INFO | SparkSession created
+2026-09-03 06:19:12 | INFO | Starting read_raw()
+2026-09-03 06:19:12 | INFO | Input files found: 7
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 06:19:12 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 06:19:18 | INFO | Raw input rows: 15089165
+2026-09-03 06:19:18 | INFO | read_raw() completed
+2026-09-03 06:19:18 | INFO | Starting clean()
+2026-09-03 06:19:25 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 06:19:25 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 06:19:25 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 06:19:25 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 06:19:25 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 06:19:25 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 06:19:33 | INFO | Rejected rows: 0
+2026-09-03 06:19:48 | INFO | Cleaned rows: 15089165
+2026-09-03 06:19:48 | INFO | Null activity values handled: 48562194
+2026-09-03 06:19:48 | INFO | clean() completed
+2026-09-03 06:19:48 | INFO | Starting aggregate()
+2026-09-03 06:20:00 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 06:20:09 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 06:20:09 | INFO | aggregate() completed
+2026-09-03 06:20:09 | INFO | Starting enrich()
+2026-09-03 06:20:10 | INFO | Grid lookup rows: 10000
+2026-09-03 06:20:55 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 06:20:55 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 06:20:55 | INFO | Grids missing geometry: 0
+2026-09-03 06:20:55 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 06:21:13 | INFO | Unmatched grid IDs: 0
+2026-09-03 06:21:13 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 06:21:13 | INFO | enrich() completed
+2026-09-03 06:21:13 | INFO | Starting write_outputs()
+2026-09-03 06:21:13 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 06:21:13 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 06:21:13 | INFO | Clean activity schema:
+2026-09-03 06:22:41 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 06:22:41 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 06:22:53 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 06:22:55 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 06:22:59 | INFO | Clean output rows: 15089165
+2026-09-03 06:22:59 | INFO | Expected clean rows: 15089165
+2026-09-03 06:22:59 | INFO | Hourly output rows: 1679994
+2026-09-03 06:22:59 | INFO | Expected hourly rows: 1679994
+2026-09-03 06:22:59 | INFO | Parquet read-back validation: PASS
+2026-09-03 06:22:59 | INFO | write_outputs() completed
+2026-09-03 06:22:59 | INFO | Input rows: 15089165
+2026-09-03 06:22:59 | INFO | Rejected rows: 0
+2026-09-03 06:22:59 | INFO | Activity nulls handled: 48562194
+2026-09-03 06:22:59 | INFO | Output rows: 1679994
+2026-09-03 06:22:59 | INFO | End time: 2026-09-03 06:22:59.913713
+2026-09-03 06:22:59 | INFO | Duration seconds: 233.56
+2026-09-03 06:22:59 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 06:22:59 | INFO | ============================================================
+2026-09-03 06:23:00 | INFO | SparkSession stopped
+2026-09-03 06:23:00 | INFO | Closing down clientserver connection
+2026-09-03 07:05:54 | INFO | ============================================================
+2026-09-03 07:05:54 | INFO | TELECOM PIPELINE START
+2026-09-03 07:05:54 | INFO | Start time: 2026-09-03 07:05:54.245131
+2026-09-03 07:05:54 | INFO | ============================================================
+2026-09-03 07:05:58 | INFO | SparkSession created
+2026-09-03 07:05:58 | INFO | Starting read_raw()
+2026-09-03 07:05:58 | INFO | Input files found: 7
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 07:05:58 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 07:06:04 | INFO | Raw input rows: 15089165
+2026-09-03 07:06:04 | INFO | read_raw() completed
+2026-09-03 07:06:04 | INFO | Starting clean()
+2026-09-03 07:06:10 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 07:06:10 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 07:06:10 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 07:06:10 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 07:06:10 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 07:06:10 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 07:06:16 | INFO | Rejected rows: 0
+2026-09-03 07:06:28 | INFO | Cleaned rows: 15089165
+2026-09-03 07:06:28 | INFO | Null activity values handled: 48562194
+2026-09-03 07:06:28 | INFO | clean() completed
+2026-09-03 07:06:28 | INFO | Starting aggregate()
+2026-09-03 07:06:38 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 07:06:47 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 07:06:47 | INFO | aggregate() completed
+2026-09-03 07:06:47 | INFO | Starting enrich()
+2026-09-03 07:06:48 | INFO | Grid lookup rows: 10000
+2026-09-03 07:07:13 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 07:07:13 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 07:07:13 | INFO | Grids missing geometry: 0
+2026-09-03 07:07:13 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 07:07:23 | INFO | Unmatched grid IDs: 0
+2026-09-03 07:07:23 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 07:07:23 | INFO | enrich() completed
+2026-09-03 07:07:23 | INFO | Starting write_outputs()
+2026-09-03 07:07:23 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 07:07:23 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 07:07:23 | INFO | Clean activity schema:
+2026-09-03 07:08:41 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 07:08:41 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 07:08:58 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 07:09:01 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 07:09:04 | INFO | Clean output rows: 15089165
+2026-09-03 07:09:04 | INFO | Expected clean rows: 15089165
+2026-09-03 07:09:04 | INFO | Hourly output rows: 1679994
+2026-09-03 07:09:04 | INFO | Expected hourly rows: 1679994
+2026-09-03 07:09:04 | INFO | Parquet read-back validation: PASS
+2026-09-03 07:09:04 | INFO | write_outputs() completed
+2026-09-03 07:09:04 | INFO | Input rows: 15089165
+2026-09-03 07:09:04 | INFO | Rejected rows: 0
+2026-09-03 07:09:04 | INFO | Activity nulls handled: 48562194
+2026-09-03 07:09:04 | INFO | Output rows: 1679994
+2026-09-03 07:09:04 | INFO | End time: 2026-09-03 07:09:04.881774
+2026-09-03 07:09:04 | INFO | Duration seconds: 190.64
+2026-09-03 07:09:04 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 07:09:04 | INFO | ============================================================
+2026-09-03 07:09:05 | INFO | SparkSession stopped
+2026-09-03 07:09:05 | INFO | Closing down clientserver connection
+2026-09-03 08:06:25 | INFO | ============================================================
+2026-09-03 08:06:25 | INFO | TELECOM PIPELINE START
+2026-09-03 08:06:25 | INFO | Start time: 2026-09-03 08:06:25.090142
+2026-09-03 08:06:25 | INFO | ============================================================
+2026-09-03 08:06:31 | INFO | SparkSession created
+2026-09-03 08:06:31 | INFO | Starting read_raw()
+2026-09-03 08:06:31 | INFO | Input files found: 7
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 08:06:31 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 08:06:37 | INFO | Raw input rows: 15089165
+2026-09-03 08:06:37 | INFO | read_raw() completed
+2026-09-03 08:06:37 | INFO | Starting clean()
+2026-09-03 08:06:44 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 08:06:44 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 08:06:44 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 08:06:44 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 08:06:44 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 08:06:44 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 08:06:52 | INFO | Rejected rows: 0
+2026-09-03 08:07:06 | INFO | Cleaned rows: 15089165
+2026-09-03 08:07:06 | INFO | Null activity values handled: 48562194
+2026-09-03 08:07:06 | INFO | clean() completed
+2026-09-03 08:07:06 | INFO | Starting aggregate()
+2026-09-03 08:07:18 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 08:07:28 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 08:07:28 | INFO | aggregate() completed
+2026-09-03 08:07:28 | INFO | Starting enrich()
+2026-09-03 08:07:29 | INFO | Grid lookup rows: 10000
+2026-09-03 08:07:57 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 08:07:57 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 08:07:57 | INFO | Grids missing geometry: 0
+2026-09-03 08:07:57 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 08:08:08 | INFO | Unmatched grid IDs: 0
+2026-09-03 08:08:08 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 08:08:08 | INFO | enrich() completed
+2026-09-03 08:08:08 | INFO | Starting write_outputs()
+2026-09-03 08:08:08 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 08:08:08 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 08:08:08 | INFO | Clean activity schema:
+2026-09-03 08:09:27 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 08:09:27 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 08:09:42 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 08:09:45 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 08:09:49 | INFO | Clean output rows: 15089165
+2026-09-03 08:09:49 | INFO | Expected clean rows: 15089165
+2026-09-03 08:09:49 | INFO | Hourly output rows: 1679994
+2026-09-03 08:09:49 | INFO | Expected hourly rows: 1679994
+2026-09-03 08:09:49 | INFO | Parquet read-back validation: PASS
+2026-09-03 08:09:49 | INFO | write_outputs() completed
+2026-09-03 08:09:49 | INFO | Input rows: 15089165
+2026-09-03 08:09:49 | INFO | Rejected rows: 0
+2026-09-03 08:09:49 | INFO | Activity nulls handled: 48562194
+2026-09-03 08:09:49 | INFO | Output rows: 1679994
+2026-09-03 08:09:49 | INFO | End time: 2026-09-03 08:09:49.232475
+2026-09-03 08:09:49 | INFO | Duration seconds: 204.14
+2026-09-03 08:09:49 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 08:09:49 | INFO | ============================================================
+2026-09-03 08:09:49 | INFO | SparkSession stopped
+2026-09-03 08:09:49 | INFO | Closing down clientserver connection
+2026-09-03 08:13:08 | INFO | ============================================================
+2026-09-03 08:13:08 | INFO | TELECOM PIPELINE START
+2026-09-03 08:13:08 | INFO | Start time: 2026-09-03 08:13:08.854319
+2026-09-03 08:13:08 | INFO | ============================================================
+2026-09-03 08:13:14 | INFO | SparkSession created
+2026-09-03 08:13:14 | INFO | Starting read_raw()
+2026-09-03 08:13:14 | INFO | Input files found: 7
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 08:13:14 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 08:13:21 | INFO | Raw input rows: 15089165
+2026-09-03 08:13:21 | INFO | read_raw() completed
+2026-09-03 08:13:21 | INFO | Starting clean()
+2026-09-03 08:13:28 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 08:13:28 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 08:13:28 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 08:13:28 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 08:13:28 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 08:13:28 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 08:13:36 | INFO | Rejected rows: 0
+2026-09-03 08:13:52 | INFO | Cleaned rows: 15089165
+2026-09-03 08:13:52 | INFO | Null activity values handled: 48562194
+2026-09-03 08:13:52 | INFO | clean() completed
+2026-09-03 08:13:52 | INFO | Starting aggregate()
+2026-09-03 08:14:04 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 08:14:13 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 08:14:13 | INFO | aggregate() completed
+2026-09-03 08:14:13 | INFO | Starting enrich()
+2026-09-03 08:14:14 | INFO | Grid lookup rows: 10000
+2026-09-03 08:14:40 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 08:14:40 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 08:14:40 | INFO | Grids missing geometry: 0
+2026-09-03 08:14:40 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 08:14:50 | INFO | Unmatched grid IDs: 0
+2026-09-03 08:14:50 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 08:14:50 | INFO | enrich() completed
+2026-09-03 08:14:50 | INFO | Starting write_outputs()
+2026-09-03 08:14:50 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 08:14:50 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 08:14:50 | INFO | Clean activity schema:
+2026-09-03 08:16:08 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 08:16:08 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 08:16:24 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 08:16:27 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 08:16:30 | INFO | Clean output rows: 15089165
+2026-09-03 08:16:30 | INFO | Expected clean rows: 15089165
+2026-09-03 08:16:30 | INFO | Hourly output rows: 1679994
+2026-09-03 08:16:30 | INFO | Expected hourly rows: 1679994
+2026-09-03 08:16:30 | INFO | Parquet read-back validation: PASS
+2026-09-03 08:16:30 | INFO | write_outputs() completed
+2026-09-03 08:16:30 | INFO | Input rows: 15089165
+2026-09-03 08:16:30 | INFO | Rejected rows: 0
+2026-09-03 08:16:30 | INFO | Activity nulls handled: 48562194
+2026-09-03 08:16:30 | INFO | Output rows: 1679994
+2026-09-03 08:16:30 | INFO | End time: 2026-09-03 08:16:30.859041
+2026-09-03 08:16:30 | INFO | Duration seconds: 202.00
+2026-09-03 08:16:30 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 08:16:30 | INFO | ============================================================
+2026-09-03 08:16:31 | INFO | SparkSession stopped
+2026-09-03 08:16:31 | INFO | Closing down clientserver connection
+2026-09-03 08:46:58 | INFO | ============================================================
+2026-09-03 08:46:58 | INFO | TELECOM PIPELINE START
+2026-09-03 08:46:58 | INFO | Start time: 2026-09-03 08:46:58.349219
+2026-09-03 08:46:58 | INFO | ============================================================
+2026-09-03 08:47:04 | INFO | SparkSession created
+2026-09-03 08:47:04 | INFO | Starting read_raw()
+2026-09-03 08:47:04 | INFO | Input files found: 7
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 08:47:04 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 08:47:10 | INFO | Raw input rows: 15089165
+2026-09-03 08:47:10 | INFO | read_raw() completed
+2026-09-03 08:47:10 | INFO | Starting clean()
+2026-09-03 08:47:18 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 08:47:18 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 08:47:18 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 08:47:18 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 08:47:18 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 08:47:18 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 08:47:26 | INFO | Rejected rows: 0
+2026-09-03 08:47:41 | INFO | Cleaned rows: 15089165
+2026-09-03 08:47:41 | INFO | Null activity values handled: 48562194
+2026-09-03 08:47:41 | INFO | clean() completed
+2026-09-03 08:47:41 | INFO | Starting aggregate()
+2026-09-03 08:47:53 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 08:48:03 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 08:48:03 | INFO | aggregate() completed
+2026-09-03 08:48:03 | INFO | Starting enrich()
+2026-09-03 08:48:04 | INFO | Grid lookup rows: 10000
+2026-09-03 08:48:31 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 08:48:31 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 08:48:31 | INFO | Grids missing geometry: 0
+2026-09-03 08:48:31 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 08:48:40 | INFO | Unmatched grid IDs: 0
+2026-09-03 08:48:40 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 08:48:40 | INFO | enrich() completed
+2026-09-03 08:48:40 | INFO | Starting write_outputs()
+2026-09-03 08:48:40 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 08:48:40 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 08:48:40 | INFO | Clean activity schema:
+2026-09-03 08:50:08 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 08:50:08 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 08:50:25 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 08:50:28 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 08:50:32 | INFO | Clean output rows: 15089165
+2026-09-03 08:50:32 | INFO | Expected clean rows: 15089165
+2026-09-03 08:50:32 | INFO | Hourly output rows: 1679994
+2026-09-03 08:50:32 | INFO | Expected hourly rows: 1679994
+2026-09-03 08:50:32 | INFO | Parquet read-back validation: PASS
+2026-09-03 08:50:32 | INFO | write_outputs() completed
+2026-09-03 08:50:32 | INFO | Input rows: 15089165
+2026-09-03 08:50:32 | INFO | Rejected rows: 0
+2026-09-03 08:50:32 | INFO | Activity nulls handled: 48562194
+2026-09-03 08:50:32 | INFO | Output rows: 1679994
+2026-09-03 08:50:32 | INFO | End time: 2026-09-03 08:50:32.239103
+2026-09-03 08:50:32 | INFO | Duration seconds: 213.89
+2026-09-03 08:50:32 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 08:50:32 | INFO | ============================================================
+2026-09-03 08:50:33 | INFO | SparkSession stopped
+2026-09-03 08:50:33 | INFO | Closing down clientserver connection
+2026-09-03T09:12:14.561055 | DE7 STATUS: SUCCESS | RUN_ID: manual__2026-09-03T08:46:02.637037+00:00 | AS_OF: 2013-11-07 23:00:00 | FRESHNESS: STALE
+2026-09-03T09:12:15.973267 | END-TO-END PIPELINE COMPLETED | STATUS: SUCCESS | HEALTHY: True
+2026-09-03 20:00:56 | INFO | ============================================================
+2026-09-03 20:00:56 | INFO | TELECOM PIPELINE START
+2026-09-03 20:00:56 | INFO | Start time: 2026-09-03 20:00:56.047606
+2026-09-03 20:00:56 | INFO | ============================================================
+2026-09-03 20:01:01 | INFO | SparkSession created
+2026-09-03 20:01:01 | INFO | Starting read_raw()
+2026-09-03 20:01:01 | INFO | Input files found: 7
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 20:01:01 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 20:01:08 | INFO | Raw input rows: 15089165
+2026-09-03 20:01:08 | INFO | read_raw() completed
+2026-09-03 20:01:08 | INFO | Starting clean()
+2026-09-03 20:01:15 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 20:01:15 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 20:01:15 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 20:01:15 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 20:01:15 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 20:01:15 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 20:01:22 | INFO | Rejected rows: 0
+2026-09-03 20:01:37 | INFO | Cleaned rows: 15089165
+2026-09-03 20:01:37 | INFO | Null activity values handled: 48562194
+2026-09-03 20:01:37 | INFO | clean() completed
+2026-09-03 20:01:37 | INFO | Starting aggregate()
+2026-09-03 20:01:49 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 20:01:58 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 20:01:58 | INFO | aggregate() completed
+2026-09-03 20:01:58 | INFO | Starting enrich()
+2026-09-03 20:01:59 | INFO | Grid lookup rows: 10000
+2026-09-03 20:02:27 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 20:02:27 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 20:02:27 | INFO | Grids missing geometry: 0
+2026-09-03 20:02:27 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 20:02:39 | INFO | Unmatched grid IDs: 0
+2026-09-03 20:02:39 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 20:02:39 | INFO | enrich() completed
+2026-09-03 20:02:39 | INFO | Starting write_outputs()
+2026-09-03 20:02:39 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 20:02:39 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 20:02:39 | INFO | Clean activity schema:
+2026-09-03 20:04:30 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 20:04:30 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 20:04:59 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 20:05:10 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 20:11:10 | INFO | ============================================================
+2026-09-03 20:11:10 | INFO | TELECOM PIPELINE START
+2026-09-03 20:11:10 | INFO | Start time: 2026-09-03 20:11:10.012938
+2026-09-03 20:11:10 | INFO | ============================================================
+2026-09-03 20:11:15 | INFO | SparkSession created
+2026-09-03 20:11:15 | INFO | Starting read_raw()
+2026-09-03 20:11:15 | INFO | Input files found: 7
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-01.csv
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-02.csv
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-03.csv
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-04.csv
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-05.csv
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-06.csv
+2026-09-03 20:11:15 | INFO | Input file: /mnt/d/capstone1/data/raw/sms-call-internet-mi-2013-11-07.csv
+2026-09-03 20:11:22 | INFO | Raw input rows: 15089165
+2026-09-03 20:11:22 | INFO | read_raw() completed
+2026-09-03 20:11:22 | INFO | Starting clean()
+2026-09-03 20:11:29 | INFO | Activity nulls - sms_in: 9065620
+2026-09-03 20:11:29 | INFO | Activity nulls - sms_out: 11542655
+2026-09-03 20:11:29 | INFO | Activity nulls - call_in: 10979856
+2026-09-03 20:11:29 | INFO | Activity nulls - call_out: 8604862
+2026-09-03 20:11:29 | INFO | Activity nulls - internet_activity: 8369201
+2026-09-03 20:11:29 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-09-03 20:11:36 | INFO | Rejected rows: 0
+2026-09-03 20:11:53 | INFO | Cleaned rows: 15089165
+2026-09-03 20:11:53 | INFO | Null activity values handled: 48562194
+2026-09-03 20:11:53 | INFO | clean() completed
+2026-09-03 20:11:53 | INFO | Starting aggregate()
+2026-09-03 20:12:07 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065799996
+2026-09-03 20:12:19 | INFO | hourly_grid_summary rows: 1679994
+2026-09-03 20:12:19 | INFO | aggregate() completed
+2026-09-03 20:12:19 | INFO | Starting enrich()
+2026-09-03 20:12:21 | INFO | Grid lookup rows: 10000
+2026-09-03 20:12:53 | INFO | Distinct activity grids before enrichment: 10000
+2026-09-03 20:12:53 | INFO | Distinct activity grids after enrichment: 10000
+2026-09-03 20:12:53 | INFO | Grids missing geometry: 0
+2026-09-03 20:12:53 | INFO | Geometry enrichment coverage: 100.00%
+2026-09-03 20:13:05 | INFO | Unmatched grid IDs: 0
+2026-09-03 20:13:05 | INFO | Top high-activity grids with geometry prepared
+2026-09-03 20:13:05 | INFO | enrich() completed
+2026-09-03 20:13:05 | INFO | Starting write_outputs()
+2026-09-03 20:13:05 | INFO | About to write clean activity Parquet: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 20:13:05 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-09-03 20:13:05 | INFO | Clean activity schema:
+2026-09-03 20:14:49 | INFO | Clean activity Parquet write: SUCCESS
+2026-09-03 20:14:49 | INFO | Clean activity Parquet written: /mnt/d/capstone1/data/processed/clean_activity_parquet
+2026-09-03 20:15:08 | INFO | hourly_grid_summary Parquet written: /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet
+2026-09-03 20:15:12 | INFO | Dashboard CSV written: /mnt/d/capstone1/data/processed/dashboard_summary
+2026-09-03 20:15:16 | INFO | Clean output rows: 15089165
+2026-09-03 20:15:16 | INFO | Expected clean rows: 15089165
+2026-09-03 20:15:16 | INFO | Hourly output rows: 1679994
+2026-09-03 20:15:16 | INFO | Expected hourly rows: 1679994
+2026-09-03 20:15:16 | INFO | Parquet read-back validation: PASS
+2026-09-03 20:15:16 | INFO | write_outputs() completed
+2026-09-03 20:15:16 | INFO | Input rows: 15089165
+2026-09-03 20:15:16 | INFO | Rejected rows: 0
+2026-09-03 20:15:16 | INFO | Activity nulls handled: 48562194
+2026-09-03 20:15:16 | INFO | Output rows: 1679994
+2026-09-03 20:15:16 | INFO | End time: 2026-09-03 20:15:16.290622
+2026-09-03 20:15:16 | INFO | Duration seconds: 246.28
+2026-09-03 20:15:16 | INFO | FINAL STATUS: SUCCESS
+2026-09-03 20:15:16 | INFO | ============================================================
+2026-09-03 20:15:16 | INFO | SparkSession stopped
+2026-09-03 20:15:16 | INFO | Closing down clientserver connection
+2026-09-03T20:32:18.605222 | DE7 STATUS: SUCCESS | RUN_ID: manual__2026-09-03T20:00:02.277995+00:00 | AS_OF: 2013-11-07 23:00:00 | FRESHNESS: STALE
+2026-09-03T20:32:20.072483 | END-TO-END PIPELINE COMPLETED | STATUS: SUCCESS | HEALTHY: True

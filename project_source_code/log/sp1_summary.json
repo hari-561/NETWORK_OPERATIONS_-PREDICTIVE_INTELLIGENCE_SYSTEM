@@ -1,0 +1,28 @@
+{
+    "file_count": 7,
+    "files_found": [
+        "sms-call-internet-mi-2013-11-01.csv",
+        "sms-call-internet-mi-2013-11-02.csv",
+        "sms-call-internet-mi-2013-11-03.csv",
+        "sms-call-internet-mi-2013-11-04.csv",
+        "sms-call-internet-mi-2013-11-05.csv",
+        "sms-call-internet-mi-2013-11-06.csv",
+        "sms-call-internet-mi-2013-11-07.csv"
+    ],
+    "total_rows": 15089165,
+    "source_file_count": 7,
+    "source_files": [
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-06.csv",
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-07.csv",
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-05.csv",
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-04.csv",
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-01.csv",
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-02.csv",
+        "file:///D:/capstone1/data/sms-call-internet-mi-2013-11-03.csv"
+    ],
+    "unique_cell_ids": 10000,
+    "country_code_categories": 326,
+    "distinct_datetime_intervals": 168,
+    "distinct_hour_intervals": 168,
+    "num_partitions": 7
+}

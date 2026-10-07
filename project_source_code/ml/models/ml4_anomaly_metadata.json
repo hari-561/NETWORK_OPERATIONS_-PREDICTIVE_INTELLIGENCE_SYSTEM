@@ -1,0 +1,218 @@
+{
+    "project_stage": "ML4",
+    "task": "Anomaly Detection",
+    "created_at": "2026-09-05T17:31:02.406470",
+    "data": {
+        "source": "fact_network_activity",
+        "activity_column": "total_activity",
+        "input_rows": 1679994,
+        "grid_count": 10000,
+        "timestamp_min": "2013-11-01 00:00:00",
+        "timestamp_max": "2013-11-07 23:00:00"
+    },
+    "baseline": {
+        "statistic": "median",
+        "keys": [
+            "grid_id",
+            "hour_of_day"
+        ],
+        "history_definition": "Observations strictly before the current timestamp within the same grid_id and hour_of_day bucket.",
+        "minimum_history_count": 3,
+        "current_value": "total_activity"
+    },
+    "anomaly_calculation": {
+        "deviation": "(current_activity - historical_baseline) / historical_baseline",
+        "anomaly_score": "abs(deviation)",
+        "threshold": 0.5,
+        "threshold_description": "\u00b150%"
+    },
+    "classification": {
+        "HIGH": "deviation >= +50%",
+        "LOW": "deviation <= -50%",
+        "NORMAL": "deviation within \u00b150%",
+        "UNKNOWN": "Insufficient historical observations to calculate a baseline."
+    },
+    "operational_action": {
+        "anomaly": "INVESTIGATE",
+        "normal": "NONE",
+        "interpretation": "An anomaly is an operational attention signal, not confirmation of network congestion."
+    },
+    "feature_engineering": {
+        "baseline_features": [
+            "grid_id",
+            "hour_of_day",
+            "historical_baseline",
+            "baseline_count"
+        ],
+        "derived_features": [
+            "deviation",
+            "anomaly_score",
+            "anomaly_direction",
+            "anomaly_flag"
+        ]
+    },
+    "validation": {
+        "null_total_activity": 0,
+        "null_historical_baseline": 720000,
+        "null_deviation": 720000,
+        "null_reason": 0,
+        "null_recommended_action": 0,
+        "duplicate_grid_timestamp": 0
+    },
+    "distribution": {
+        "anomaly_direction": {
+            "NORMAL": 777785,
+            "UNKNOWN": 720000,
+            "HIGH": 174321,
+            "LOW": 7888
+        },
+        "anomaly_flag": {
+            "0": 1497785,
+            "1": 182209
+        },
+        "recommended_action": {
+            "NONE": 1497785,
+            "INVESTIGATE": 182209
+        }
+    },
+    "comparison": {
+        "ml3_vs_ml4_high_activity": {
+            "BOTH_HIGH": {
+                "rows": 8913,
+                "percentage": 3.7141214121412145
+            },
+            "ML3_HIGH_ONLY": {
+                "rows": 36542,
+                "percentage": 15.227356068940226
+            },
+            "ML4_HIGH_ONLY": {
+                "rows": 6144,
+                "percentage": 2.5602560256025604
+            },
+            "NEITHER_HIGH": {
+                "rows": 188377,
+                "percentage": 78.498266493316
+            }
+        },
+        "ml4_vs_np3_high_activity": {
+            "BOTH_AGREE": {
+                "rows": 7946,
+                "percentage": 3.3108471285297023
+            },
+            "ML4_ONLY": {
+                "rows": 7114,
+                "percentage": 2.9641790174125724
+            },
+            "NEITHER": {
+                "rows": 211445,
+                "percentage": 88.10245042687677
+            },
+            "NP3_ONLY": {
+                "rows": 13494,
+                "percentage": 5.622523427180946
+            }
+        },
+        "ml4_vs_np3_activity_spike": {
+            "BOTH_AGREE": {
+                "rows": 3190,
+                "percentage": 1.329172204884187
+            },
+            "ML4_ONLY": {
+                "rows": 11870,
+                "percentage": 4.945853941058088
+            },
+            "NEITHER": {
+                "rows": 216894,
+                "percentage": 90.3728765536523
+            },
+            "NP3_ONLY": {
+                "rows": 8045,
+                "percentage": 3.3520973004054184
+            }
+        },
+        "three_way_ml3_ml4_np3_high_activity": {
+            "ALL_THREE": {
+                "rows": 7066,
+                "percentage": 2.9444611127779448
+            },
+            "ML3_ML4_ONLY": {
+                "rows": 1847,
+                "percentage": 0.7696602993632696
+            },
+            "ML3_NP3_ONLY": {
+                "rows": 9361,
+                "percentage": 3.900806747341401
+            },
+            "ML3_ONLY": {
+                "rows": 27181,
+                "percentage": 11.326549321598826
+            },
+            "ML4_NP3_ONLY": {
+                "rows": 880,
+                "percentage": 0.3667033370003667
+            },
+            "ML4_ONLY": {
+                "rows": 5264,
+                "percentage": 2.193552688602194
+            },
+            "NONE": {
+                "rows": 184244,
+                "percentage": 76.77601093442678
+            },
+            "NP3_ONLY": {
+                "rows": 4133,
+                "percentage": 1.7222555588892223
+            }
+        },
+        "three_way_ml3_ml4_np3_activity_spike": {
+            "ALL_THREE": {
+                "rows": 1314,
+                "percentage": 0.5475547554755475
+            },
+            "ML3_ML4_ONLY": {
+                "rows": 7599,
+                "percentage": 3.1665666566656667
+            },
+            "ML3_NP3_ONLY": {
+                "rows": 881,
+                "percentage": 0.36712004533786713
+            },
+            "ML3_ONLY": {
+                "rows": 35661,
+                "percentage": 14.860236023602361
+            },
+            "ML4_NP3_ONLY": {
+                "rows": 1876,
+                "percentage": 0.7817448411507817
+            },
+            "ML4_ONLY": {
+                "rows": 4268,
+                "percentage": 1.7785111844517785
+            },
+            "NONE": {
+                "rows": 181213,
+                "percentage": 75.51296796346301
+            },
+            "NP3_ONLY": {
+                "rows": 7164,
+                "percentage": 2.9852985298529853
+            }
+        }
+    },
+    "interpretation_notes": [
+        "ML4 is a descriptive/current anomaly detector.",
+        "ML3 is a predictive next-hour high-activity classifier.",
+        "NP3 is rule-based and uses separate alert definitions.",
+        "NP3 HIGH_ACTIVITY and ACTIVITY_SPIKE represent different signals.",
+        "Agreement between methods is informative but disagreement is expected.",
+        "Absence of an NP3 alert does not necessarily mean the mathematical condition was false because NP3 applies its configured activity floor.",
+        "High activity must not be interpreted as confirmed network congestion because the dataset does not contain capacity, throughput, latency, or similar network-performance measurements."
+    ],
+    "artifacts": {
+        "dataset": "data/ml4_anomaly_dataset.csv",
+        "metadata": "models/ml4_anomaly_metadata.json",
+        "ml3_dataset": "data/ml3_final_engineered_dataset.csv",
+        "ml3_model": "models/ml3_high_activity_decision_tree.joblib",
+        "ml3_metadata": "models/ml3_model_metadata.json"
+    }
+}

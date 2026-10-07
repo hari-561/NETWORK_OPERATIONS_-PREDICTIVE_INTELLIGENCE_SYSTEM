@@ -1,0 +1,133 @@
+2026-09-04 14:59:01,627 | INFO | ==================================================
+2026-09-04 14:59:01,627 | INFO | ML2 — NETWORK ACTIVITY FEATURE ENGINEERING
+2026-09-04 14:59:01,628 | INFO | ==================================================
+2026-09-04 14:59:01,628 | INFO | Creating SparkSession
+2026-09-04 14:59:20,340 | INFO | SparkSession created
+2026-09-04 14:59:20,340 | INFO | Reading network activity from MySQL
+2026-09-04 14:59:21,421 | INFO | Source columns: ['grid_key', 'grid_id', 'timestamp', 'internet_activity', 'total_activity']
+2026-09-04 14:59:27,750 | INFO | Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=1272>
+2026-09-04 14:59:27,754 | INFO | Closing down clientserver connection
+2026-09-04 14:59:27,755 | ERROR | Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=1272>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2026-09-04 14:59:27,757 | ERROR | KeyboardInterrupt while sending command.
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\core\context.py", line 408, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\core\context.py", line 2507, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+    ^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\errors\exceptions\captured.py", line 251, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o21.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\core\context.py", line 410, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2026-09-04 14:59:27,764 | INFO | Stopping SparkSession
+2026-09-04 14:59:28,246 | INFO | Closing down clientserver connection
+2026-09-04 14:59:28,270 | INFO | Closing down clientserver connection
+2026-09-04 15:00:04,831 | INFO | ==================================================
+2026-09-04 15:00:04,831 | INFO | ML2 — NETWORK ACTIVITY FEATURE ENGINEERING
+2026-09-04 15:00:04,831 | INFO | ==================================================
+2026-09-04 15:00:04,832 | INFO | Creating SparkSession
+2026-09-04 15:00:14,457 | INFO | SparkSession created
+2026-09-04 15:00:14,458 | INFO | Reading network activity from MySQL
+2026-09-04 15:00:15,338 | INFO | Source columns: ['grid_key', 'grid_id', 'timestamp', 'internet_activity', 'total_activity']
+2026-09-04 15:00:46,285 | INFO | Input rows: 1679994
+2026-09-04 15:00:46,286 | INFO | Cleaning source data
+2026-09-04 15:00:47,292 | INFO | Source cleaning completed
+2026-09-04 15:00:47,292 | INFO | Checking duplicate grid/timestamp records
+2026-09-04 15:02:14,279 | INFO | Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=1256>
+2026-09-04 15:02:14,282 | INFO | Closing down clientserver connection
+2026-09-04 15:02:14,283 | ERROR | Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=1256>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2026-09-04 15:02:14,287 | ERROR | KeyboardInterrupt while sending command.
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\core\context.py", line 408, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\core\context.py", line 2507, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+    ^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\errors\exceptions\captured.py", line 251, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o21.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\harikumar.g\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyspark\core\context.py", line 410, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+2026-09-04 15:02:14,294 | INFO | Stopping SparkSession
+2026-09-04 15:02:14,686 | INFO | Closing down clientserver connection

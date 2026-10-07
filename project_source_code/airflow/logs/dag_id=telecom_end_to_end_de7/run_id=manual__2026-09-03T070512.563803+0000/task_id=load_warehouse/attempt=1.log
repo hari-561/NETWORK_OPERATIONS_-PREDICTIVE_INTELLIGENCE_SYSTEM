@@ -1,0 +1,452 @@
+{"timestamp":"2026-09-03T07:09:08.975013Z","level":"info","event":"::group::Pre Execute","logger":"task","filename":"task_runner.py","lineno":2412}
+{"timestamp":"2026-09-03T07:09:10.743260Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags, apache-airflow-providers-common-sql-example-dags, apache-airflow-providers-standard-example-dags","map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","dag_id":"telecom_end_to_end_de7","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":304}
+{"timestamp":"2026-09-03T07:09:10.753195Z","level":"info","event":"Filling up the DagBag from /mnt/d/capstone1/airflow/dags/telecom_end_to_end_de7.py","map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","dag_id":"telecom_end_to_end_de7","logger":"airflow.dag_processing.dagbag.BundleDagBag","filename":"dagbag.py","lineno":460}
+{"timestamp":"2026-09-03T07:09:14.462518Z","level":"info","event":"Worker startup parse complete","bundle_name":"dags-folder","bundle_version":null,"dag_file":"telecom_end_to_end_de7.py","dag_id":"telecom_end_to_end_de7","bundle_prepare_ms":184,"dag_file_parse_ms":3709,"map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","logger":"task","filename":"task_runner.py","lineno":1073}
+{"timestamp":"2026-09-03T07:09:14.779284Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.781004Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.783198Z","level":"info","event":"Current task name:load_warehouse","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.785607Z","level":"info","event":"Dag name:telecom_end_to_end_de7","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.780180Z","level":"info","event":"::endgroup::","map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","dag_id":"telecom_end_to_end_de7","logger":"task","filename":"task_runner.py","lineno":2232}
+{"timestamp":"2026-09-03T07:09:14.789472Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.791433Z","level":"info","event":"TASK: LOAD WAREHOUSE","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.793280Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.797045Z","level":"info","event":"Running warehouse loader:","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:14.798725Z","level":"info","event":"/home/harikumarg/airflow_test/airflow_env/bin/python3 /mnt/d/capstone1/src/warehouse_loader.py --hourly /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet --geojson /mnt/d/capstone1/data/reference/milano-grid.geojson","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:09:16.184120Z","level":"error","event":"2026-09-03 07:09:16,183 | INFO | Connecting to MySQL warehouse","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:16.566635Z","level":"error","event":"2026-09-03 07:09:16,566 | INFO | MySQL connection established","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:16.568197Z","level":"error","event":"2026-09-03 07:09:16,566 | INFO | Starting Spark session","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:17.091355Z","level":"error","event":"WARNING: Using incubator modules: jdk.incubator.vector","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:19.482680Z","level":"error","event":"Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:19.509765Z","level":"error","event":"26/09/03 07:09:19 WARN Utils: Your hostname, C8LAP1542, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:19.514816Z","level":"error","event":"26/09/03 07:09:19 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:20.540171Z","level":"error","event":"26/09/03 07:09:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:20.970365Z","level":"error","event":"Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:20.972668Z","level":"error","event":"Setting default log level to \"WARN\".","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:20.976141Z","level":"error","event":"To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:21.254485Z","level":"error","event":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pyspark/testing/utils.py:127: FutureWarning: PySpark does not yet fully support pandas >= 3.0.0. Some features may not work correctly. It is recommended to use pandas < 3.0.0 for now.","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:21.257232Z","level":"error","event":"  require_minimum_pandas_version()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:28.502184Z","level":"error","event":"2026-09-03 07:09:28,501 | INFO | Spark session established","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:28.503938Z","level":"error","event":"2026-09-03 07:09:28,502 | INFO | Creating warehouse tables","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:28.577163Z","level":"error","event":"2026-09-03 07:09:28,576 | INFO | Warehouse tables ready","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:28.579120Z","level":"error","event":"2026-09-03 07:09:28,577 | INFO | Loading static Milan grid reference","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:28.929945Z","level":"error","event":"2026-09-03 07:09:28,929 | INFO | Grid dimension records: 10000","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:45.042476Z","level":"error","event":"2026-09-03 07:09:45,041 | INFO | dim_grid populated successfully","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:45.052888Z","level":"error","event":"2026-09-03 07:09:45,052 | INFO | Loading time dimension from Spark output","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.546564Z","level":"error","event":"\r[Stage 0:>                                                          (0 + 1) / 1]\r\r                                                                                \r\r[Stage 1:>                                                          (0 + 4) / 4]\r\r                                                                                \r2026-09-03 07:09:52,546 | INFO | Distinct timestamps found: 168","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.548248Z","level":"error","event":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pyspark/sql/pandas/conversion.py:298: FutureWarning: PySpark does not yet fully support pandas >= 3.0.0. Some features may not work correctly. It is recommended to use pandas < 3.0.0 for now.","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.549682Z","level":"error","event":"  require_minimum_pandas_version()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.564622Z","level":"error","event":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pyspark/sql/pandas/conversion.py:348: UserWarning: toPandas attempted Arrow optimization because 'spark.sql.execution.arrow.pyspark.enabled' is set to true; however, failed by the reason below:","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.566540Z","level":"error","event":"  [PACKAGE_NOT_INSTALLED] PyArrow >= 18.0.0 must be installed; however, it was not found.","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.568878Z","level":"error","event":"Attempting non-optimization as 'spark.sql.execution.arrow.pyspark.fallback.enabled' is set to true.","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:52.570699Z","level":"error","event":"  warn(msg)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:54.128298Z","level":"error","event":"\r[Stage 7:>                                                          (0 + 4) / 4]\r\r                                                                                \r/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pyspark/sql/pandas/types.py:778: FutureWarning: PySpark does not yet fully support pandas >= 3.0.0. Some features may not work correctly. It is recommended to use pandas < 3.0.0 for now.","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:54.130206Z","level":"error","event":"  require_minimum_pandas_version()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:54.374112Z","level":"error","event":"2026-09-03 07:09:54,373 | INFO | dim_time populated successfully","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:54.376378Z","level":"error","event":"2026-09-03 07:09:54,373 | INFO | Starting Spark fact loading","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:55.684350Z","level":"error","event":"2026-09-03 07:09:55,684 | INFO | Hourly output schema:","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:56.305537Z","level":"error","event":"2026-09-03 07:09:56,305 | INFO | hourly_grid_summary rows: 1679994","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:58.099293Z","level":"error","event":"2026-09-03 07:09:58,098 | INFO | dim_grid rows read by Spark: 10000","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:09:58.431117Z","level":"error","event":"2026-09-03 07:09:58,430 | INFO | dim_time rows read by Spark: 168","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:00.626742Z","level":"error","event":"\r[Stage 26:>                                                         (0 + 4) / 4]\r\r[Stage 26:>                 (0 + 4) / 4][Stage 28:>                 (0 + 0) / 1]\r\r[Stage 26:====>             (1 + 3) / 4][Stage 28:>                 (0 + 1) / 1]\r\r                                                                                \r2026-09-03 07:10:00,625 | INFO | Rows matching dim_grid: 1679994 / 1679994","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:02.728367Z","level":"error","event":"\r[Stage 35:>                                                         (0 + 4) / 4]\r\r[Stage 35:>                 (0 + 4) / 4][Stage 37:>                 (0 + 0) / 1]\r\r[Stage 35:====>             (1 + 3) / 4][Stage 37:>                 (0 + 1) / 1]\r\r                                                                                \r2026-09-03 07:10:02,727 | INFO | Rows matching dim_time: 1679994 / 1679994","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:04.760693Z","level":"error","event":"\r[Stage 45:>                                                         (0 + 4) / 4]\r\r[Stage 45:>   (0 + 4) / 4][Stage 47:>   (0 + 0) / 1][Stage 49:>   (0 + 0) / 1]\r\r[Stage 45:>   (0 + 4) / 4][Stage 47:>   (0 + 1) / 1][Stage 49:>   (0 + 0) / 1]\r\r                                                                                \r2026-09-03 07:10:04,759 | INFO | Fact rows prepared: 1679994","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:07.562498Z","level":"error","event":"\r[Stage 57:>                                                         (0 + 4) / 4]\r\r[Stage 57:>   (0 + 4) / 4][Stage 59:>   (0 + 0) / 1][Stage 61:>   (0 + 0) / 1]\r\r                                                                                \r\r[Stage 63:>                                                         (0 + 4) / 4]\r\r                                                                                \r2026-09-03 07:10:07,562 | INFO | Fact grain validation passed","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:07.564613Z","level":"error","event":"2026-09-03 07:10:07,562 | INFO | Writing fact_network_activity","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.890652Z","level":"error","event":"\r[Stage 73:>   (0 + 4) / 4][Stage 75:>   (0 + 0) / 1][Stage 77:>   (0 + 0) / 1]\r\r                                                                                \r\r[Stage 79:>                                                         (0 + 4) / 4]\r26/09/03 07:10:14 ERROR Executor: Exception in task 0.0 in stage 79.0 (TID 81)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.892815Z","level":"error","event":"java.sql.BatchUpdateException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.895088Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.896973Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.898559Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.900461Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.902067Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.904224Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.906288Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.908116Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.909779Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.911450Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.913195Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.915362Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.917520Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.919968Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.921949Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.923781Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.925925Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.927826Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.929671Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.931273Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.932931Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.935093Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.937317Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.940083Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.942380Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.943912Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.945357Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.947295Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.976122Z","level":"error","event":"26/09/03 07:10:14 WARN TaskSetManager: Lost task 0.0 in stage 79.0 (TID 81) (10.255.255.254 executor driver): java.sql.BatchUpdateException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.977865Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.979822Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.981670Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.983287Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.985141Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.986950Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.988784Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.990061Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.991377Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.992991Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.994565Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.996232Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.997771Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:14.999102Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.000425Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.001795Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.003432Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.005073Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.006637Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.008316Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.009903Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.011807Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.014170Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.016052Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.017802Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.019454Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.021120Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.022716Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.024392Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.026054Z","level":"error","event":"26/09/03 07:10:14 ERROR TaskSetManager: Task 0 in stage 79.0 failed 1 times; aborting job","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.028252Z","level":"error","event":"26/09/03 07:10:14 ERROR Executor: Exception in task 2.0 in stage 79.0 (TID 83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.029807Z","level":"error","event":"java.sql.BatchUpdateException: Duplicate entry '31-54' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.031483Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.033120Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.034531Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.036098Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.037633Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.039219Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.040859Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.042250Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.044053Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.046197Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.047791Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.049521Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.051054Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.052659Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.054889Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.056412Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.058104Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.059752Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.061533Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.063252Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.064845Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.066377Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '31-54' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.068020Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.069563Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.071665Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.073562Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.077990Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.080317Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.132945Z","level":"error","event":"\r[Stage 79:>                                                         (0 + 3) / 4]\r26/09/03 07:10:15 WARN TaskSetManager: Lost task 1.0 in stage 79.0 (TID 82) (10.255.255.254 executor driver): TaskKilled (Stage cancelled: Job aborted due to stage failure: Task 0 in stage 79.0 failed 1 times, most recent failure: Lost task 0.0 in stage 79.0 (TID 81) (10.255.255.254 executor driver): java.sql.BatchUpdateException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.134678Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.136197Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.137950Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.139490Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.140933Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.142638Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.144348Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.145899Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.147455Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.148941Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.150384Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.151797Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.153287Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.154876Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.156349Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.157652Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.158870Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.160105Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.161578Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.162785Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.164226Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.165548Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.166864Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.168275Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.169717Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.171248Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.172721Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.174077Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.175586Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.176920Z","level":"error","event":"Driver stacktrace:)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.178575Z","level":"error","event":"26/09/03 07:10:15 WARN TaskSetManager: Lost task 2.0 in stage 79.0 (TID 83) (10.255.255.254 executor driver): java.sql.BatchUpdateException: Duplicate entry '31-54' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.180069Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.181425Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.182811Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.184160Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.185604Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.186868Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.188183Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.189571Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.190966Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.192408Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.193829Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.196127Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.197778Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.199272Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.200988Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.202357Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.203631Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.205015Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.206413Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.207796Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.209179Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.210496Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '31-54' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.211790Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.215356Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.216717Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.218209Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.219692Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.220987Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.222239Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.223554Z","level":"error","event":"26/09/03 07:10:15 WARN TaskSetManager: Lost task 3.0 in stage 79.0 (TID 84) (10.255.255.254 executor driver): TaskKilled (Stage cancelled: Job aborted due to stage failure: Task 0 in stage 79.0 failed 1 times, most recent failure: Lost task 0.0 in stage 79.0 (TID 81) (10.255.255.254 executor driver): java.sql.BatchUpdateException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.224818Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.225861Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.227096Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.228507Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.229917Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.232177Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.233755Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.235266Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.239258Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.241928Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.243757Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.246175Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.248711Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.250810Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.252754Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.254771Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.256878Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.258501Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.260179Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.262298Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.264459Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.266272Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.268177Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.269781Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.270928Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.272308Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.273658Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.274988Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.276679Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.278112Z","level":"error","event":"Driver stacktrace:)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.279678Z","level":"error","event":"2026-09-03 07:10:15,165 | INFO | Closing warehouse resources","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.325333Z","level":"error","event":"2026-09-03 07:10:15,325 | INFO | Spark session stopped","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.330762Z","level":"error","event":"2026-09-03 07:10:15,330 | INFO | MySQL engine disposed","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.332308Z","level":"error","event":"2026-09-03 07:10:15,330 | INFO | All warehouse resources closed","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.333648Z","level":"info","event":"root","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.334935Z","level":"info","event":" |-- timestamp: timestamp (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.336208Z","level":"info","event":" |-- grid_id: string (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.337397Z","level":"info","event":" |-- sms_in: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.338747Z","level":"info","event":" |-- sms_out: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.340017Z","level":"info","event":" |-- call_in: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.341429Z","level":"info","event":" |-- call_out: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.342750Z","level":"info","event":" |-- internet_activity: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.343997Z","level":"info","event":" |-- total_sms: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.345240Z","level":"info","event":" |-- total_calls: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.346292Z","level":"info","event":" |-- total_activity: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.347378Z","level":"info","event":" |-- internet_share: double (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.348472Z","level":"info","event":" |-- date: date (nullable = true)","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.349556Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.384415Z","level":"error","event":"Traceback (most recent call last):","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.387329Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1302, in <module>","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.388951Z","level":"error","event":"    main()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.390519Z","level":"error","event":"    ~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.391854Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1298, in main","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.392935Z","level":"error","event":"    loader.run()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.393951Z","level":"error","event":"    ~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.395031Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1257, in run","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.396195Z","level":"error","event":"    self.load_fact_with_spark()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.397685Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.399043Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1112, in load_fact_with_spark","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.400114Z","level":"error","event":"    .save()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.401177Z","level":"error","event":"     ~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.402248Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pyspark/sql/readwriter.py\", line 1833, in save","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.403576Z","level":"error","event":"    self._jwrite.save()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.404701Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.405917Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/py4j/java_gateway.py\", line 1362, in __call__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.407013Z","level":"error","event":"    return_value = get_return_value(","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.408238Z","level":"error","event":"        answer, self.gateway_client, self.target_id, self.name)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.409572Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pyspark/errors/exceptions/captured.py\", line 251, in deco","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.411046Z","level":"error","event":"    return f(*a, **kw)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.412349Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/py4j/protocol.py\", line 327, in get_return_value","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.413593Z","level":"error","event":"    raise Py4JJavaError(","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.414945Z","level":"error","event":"        \"An error occurred while calling {0}{1}{2}.\\n\".","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.416112Z","level":"error","event":"        format(target_id, \".\", name), value)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.417384Z","level":"error","event":"py4j.protocol.Py4JJavaError: An error occurred while calling o245.save.","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.418679Z","level":"error","event":": org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 79.0 failed 1 times, most recent failure: Lost task 0.0 in stage 79.0 (TID 81) (10.255.255.254 executor driver): java.sql.BatchUpdateException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.420202Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.421626Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.423737Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.424772Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.425889Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.427149Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.428368Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.429622Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.430864Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.432367Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.433668Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.434891Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.436133Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.437583Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.438876Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.440301Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.441574Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.442791Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.443945Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.445155Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.446678Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.447908Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.449054Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.450159Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.451496Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.452616Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.453761Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.455043Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.456259Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.457479Z","level":"error","event":"Driver stacktrace:","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.458646Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$3(DAGScheduler.scala:3318)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.459935Z","level":"error","event":"\tat scala.Option.getOrElse(Option.scala:201)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.461249Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:3318)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.462486Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:3310)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.463672Z","level":"error","event":"\tat scala.collection.immutable.List.foreach(List.scala:323)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.464982Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:3310)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.466274Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1363)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.467901Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1363)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.469225Z","level":"error","event":"\tat scala.Option.foreach(Option.scala:437)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.470377Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1363)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.471648Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3589)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.472744Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3517)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.473939Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3506)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.475107Z","level":"error","event":"\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:50)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.476441Z","level":"error","event":"\tat org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.477656Z","level":"error","event":"\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:2496)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.478950Z","level":"error","event":"\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:2517)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.480212Z","level":"error","event":"\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.481473Z","level":"error","event":"\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:2561)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.482781Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$1(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.483986Z","level":"error","event":"\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:169)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.485160Z","level":"error","event":"\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:134)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.486241Z","level":"error","event":"\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.487192Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.withScope(RDD.scala:417)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.488135Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.foreachPartition(RDD.scala:1061)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.489500Z","level":"error","event":"\tat org.apache.spark.sql.classic.Dataset.$anonfun$foreachPartition$1(Dataset.scala:1556)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.490875Z","level":"error","event":"\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.492201Z","level":"error","event":"\tat org.apache.spark.sql.classic.Dataset.$anonfun$withNewRDDExecutionId$1(Dataset.scala:2311)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.493640Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$8(SQLExecution.scala:228)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.495013Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:352)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.496343Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$7(SQLExecution.scala:189)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.497762Z","level":"error","event":"\tat org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.499001Z","level":"error","event":"\tat org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:112)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.500280Z","level":"error","event":"\tat org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:106)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.501447Z","level":"error","event":"\tat org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:111)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.502513Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$6(SQLExecution.scala:189)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.503714Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:375)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.504849Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:188)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.505906Z","level":"error","event":"\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:810)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.507066Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:130)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.508213Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:317)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.509462Z","level":"error","event":"\tat org.apache.spark.sql.classic.Dataset.withNewRDDExecutionId(Dataset.scala:2309)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.510701Z","level":"error","event":"\tat org.apache.spark.sql.classic.Dataset.foreachPartition(Dataset.scala:1556)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.511916Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.saveTable(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.513040Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:80)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.514035Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:55)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.515622Z","level":"error","event":"\tat org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:79)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.516888Z","level":"error","event":"\tat org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:77)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.518170Z","level":"error","event":"\tat org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:88)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.519367Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution$.$anonfun$runCommand$2(QueryExecution.scala:940)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.520724Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$8(SQLExecution.scala:228)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.521876Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:352)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.523012Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$7(SQLExecution.scala:189)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.524389Z","level":"error","event":"\tat org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.525660Z","level":"error","event":"\tat org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:112)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.526702Z","level":"error","event":"\tat org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:106)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.527590Z","level":"error","event":"\tat org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:111)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.528612Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$6(SQLExecution.scala:189)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.529752Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:375)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.531030Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:188)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.532315Z","level":"error","event":"\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:810)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.533793Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:130)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.535424Z","level":"error","event":"\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:317)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.536781Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution$.$anonfun$runCommand$1(QueryExecution.scala:940)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.538050Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:872)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.539417Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution$.runCommand(QueryExecution.scala:939)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.540668Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.org$apache$spark$sql$execution$QueryExecution$$eagerlyExecute$1(QueryExecution.scala:247)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.541979Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:261)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.543257Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:254)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.544528Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:495)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.545997Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:107)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.547236Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:495)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.548548Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.549658Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.550811Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.551903Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.553108Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.554128Z","level":"error","event":"\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:471)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.555189Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:254)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.556493Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$lazyCommandExecuted$1(QueryExecution.scala:218)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.557775Z","level":"error","event":"\tat scala.util.Try$.apply(Try.scala:217)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.558983Z","level":"error","event":"\tat org.apache.spark.util.Utils$.doTryWithCallerStacktrace(Utils.scala:1407)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.560295Z","level":"error","event":"\tat org.apache.spark.util.Utils$.getTryWithCallerStacktrace(Utils.scala:1457)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.561633Z","level":"error","event":"\tat org.apache.spark.util.LazyTry.get(LazyTry.scala:61)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.562966Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$commandExecuted$1(QueryExecution.scala:224)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.564337Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.withAbortTransactionOnFailure(QueryExecution.scala:632)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.565453Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:224)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.566585Z","level":"error","event":"\tat org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:309)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.567734Z","level":"error","event":"\tat org.apache.spark.sql.classic.DataFrameWriter.runCommand(DataFrameWriter.scala:615)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.568882Z","level":"error","event":"\tat org.apache.spark.sql.classic.DataFrameWriter.save(DataFrameWriter.scala:126)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.570240Z","level":"error","event":"\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.571697Z","level":"error","event":"\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.572998Z","level":"error","event":"\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.574135Z","level":"error","event":"\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.575329Z","level":"error","event":"\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.576809Z","level":"error","event":"\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.577969Z","level":"error","event":"\tat py4j.Gateway.invoke(Gateway.java:282)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.579122Z","level":"error","event":"\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.580218Z","level":"error","event":"\tat py4j.commands.CallCommand.execute(CallCommand.java:79)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.581413Z","level":"error","event":"\tat py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:184)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.582661Z","level":"error","event":"\tat py4j.ClientServerConnection.run(ClientServerConnection.java:108)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.583939Z","level":"error","event":"\tat java.base/java.lang.Thread.run(Thread.java:840)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.585177Z","level":"error","event":"Caused by: java.sql.BatchUpdateException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.586410Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.587498Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:883)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.588649Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:465)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.589760Z","level":"error","event":"\tat com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:860)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.590922Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:886)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.591976Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:1067)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.593291Z","level":"error","event":"\tat org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:1066)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.594582Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.595789Z","level":"error","event":"\tat org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1063)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.596771Z","level":"error","event":"\tat org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2536)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.597800Z","level":"error","event":"\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.598819Z","level":"error","event":"\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:206)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.600106Z","level":"error","event":"\tat org.apache.spark.scheduler.Task.run(Task.scala:147)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.601382Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:894)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.602471Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:86)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.603639Z","level":"error","event":"\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:83)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.604644Z","level":"error","event":"\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:97)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.605923Z","level":"error","event":"\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:897)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.607214Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.608443Z","level":"error","event":"\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.609765Z","level":"error","event":"\t... 1 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.610907Z","level":"error","event":"Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '6559-36' for key 'fact_network_activity.uq_fact_grid_time'","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.611997Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.613099Z","level":"error","event":"\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.614267Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.615582Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.616771Z","level":"error","event":"\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:862)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.618225Z","level":"error","event":"\t... 19 more","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.619669Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.621075Z","level":"error","event":"2026-09-03 07:10:15,388 | INFO | Closing down clientserver connection","logger":"task.stderr"}
+{"timestamp":"2026-09-03T07:10:15.749802Z","level":"error","event":"Task failed with exception","map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","dag_id":"telecom_end_to_end_de7","logger":"task","filename":"task_runner.py","lineno":1676,"error_detail":[{"exc_type":"RuntimeError","exc_value":"warehouse_loader.py failed with exit code 1","exc_notes":[],"syntax_error":null,"is_cause":false,"frames":[{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":1579,"name":"_run_task_and_map_outcome"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":197,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":2234,"name":"_execute_task"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":197,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":2192,"name":"_run_execute_callable"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/bases/operator.py","lineno":445,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/bases/decorator.py","lineno":398,"name":"execute"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/bases/operator.py","lineno":445,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/providers/standard/operators/python.py","lineno":231,"name":"execute"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/providers/standard/operators/python.py","lineno":254,"name":"execute_callable"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/callback_runner.py","lineno":97,"name":"run"},{"filename":"/mnt/d/capstone1/airflow/dags/telecom_end_to_end_de7.py","lineno":644,"name":"load_warehouse"}],"is_group":false,"exceptions":[]}]}
+{"timestamp":"2026-09-03T07:10:15.751180Z","level":"info","event":"::group::Post Execute","map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","dag_id":"telecom_end_to_end_de7","logger":"task","filename":"task_runner.py","lineno":1677}
+{"timestamp":"2026-09-03T07:10:15.761272Z","level":"info","event":"Task instance in failure state","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.763015Z","level":"info","event":"Task start","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.765849Z","level":"info","event":"Task:<Task(_PythonDecoratedOperator): load_warehouse>","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.767072Z","level":"info","event":"Failure caused by warehouse_loader.py failed with exit code 1","logger":"task.stdout"}
+{"timestamp":"2026-09-03T07:10:15.762436Z","level":"info","event":"::endgroup::","map_index":-1,"task_id":"load_warehouse","try_number":1,"run_id":"manual__2026-09-03T07:05:12.563803+00:00","ti_id":"01a06615-feec-7158-833f-2ca71879e429","dag_id":"telecom_end_to_end_de7","logger":"task","filename":"task_runner.py","lineno":2379}

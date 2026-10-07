@@ -1,0 +1,210 @@
+2026-09-05 10:59:00,805 | INFO | 
+==========================================================================================
+2026-09-05 10:59:00,806 | INFO | ML3 - HIGH ACTIVITY RISK PREDICTION
+2026-09-05 10:59:00,806 | INFO | ==========================================================================================
+2026-09-05 10:59:00,806 | INFO | [INFO] Model: Decision Tree
+2026-09-05 10:59:00,806 | INFO | [INFO] Target threshold: 1.5 x trailing 24-hour median
+2026-09-05 10:59:00,806 | INFO | [INFO] Train/test strategy: chronological 80/20 split
+2026-09-05 10:59:00,806 | INFO | [INFO] Missing observations: NOT converted to zero
+2026-09-05 10:59:00,807 | INFO | 
+==========================================================================================
+2026-09-05 10:59:00,807 | INFO | [STEP 1] Reading network_feature_table
+2026-09-05 10:59:00,807 | INFO | ==========================================================================================
+2026-09-05 10:59:01,673 | INFO | [INFO] Feature table loaded successfully.
+2026-09-05 10:59:04,300 | INFO | [INFO] Feature rows: 1209884
+2026-09-05 10:59:04,300 | INFO | [INFO] Feature schema:
+2026-09-05 10:59:04,303 | INFO | [INFO] Feature timestamp range:
+2026-09-05 10:59:07,381 | INFO | 
+==========================================================================================
+2026-09-05 10:59:07,381 | INFO | [STEP 2] Reading activity from warehouse
+2026-09-05 10:59:07,381 | INFO | ==========================================================================================
+2026-09-05 10:59:28,640 | INFO | [INFO] Activity rows: 1679994
+2026-09-05 10:59:28,640 | INFO | [INFO] Activity timestamp range:
+2026-09-05 10:59:58,627 | INFO | 
+==========================================================================================
+2026-09-05 10:59:58,628 | INFO | [STEP 3] Defining feature window
+2026-09-05 10:59:58,628 | INFO | ==========================================================================================
+2026-09-05 10:59:58,629 | INFO | 
+[INFO] LOCKED WINDOW CONVENTION
+
+Prediction time = t
+
+Recent window:
+    t-23 ... t
+    24 hours
+
+Previous baseline:
+    t-47 ... t-24
+    24 hours
+
+Target:
+    t+1
+
+No observation after t may contribute to the features.
+
+2026-09-05 10:59:58,686 | INFO | 
+==========================================================================================
+2026-09-05 10:59:58,686 | INFO | [STEP 4] Calculating trailing 24-hour median
+2026-09-05 10:59:58,686 | INFO | ==========================================================================================
+2026-09-05 10:59:58,829 | INFO | [INFO] Median calculation completed.
+2026-09-05 10:59:58,830 | INFO | 
+==========================================================================================
+2026-09-05 10:59:58,830 | INFO | [STEP 5] Checking historical window completeness
+2026-09-05 10:59:58,830 | INFO | ==========================================================================================
+2026-09-05 11:00:25,145 | INFO | [INFO] Rows before completeness filter: 1679994
+2026-09-05 11:02:32,626 | INFO | [INFO] Rows after completeness filter: 1449886
+2026-09-05 11:02:32,627 | INFO | [INFO] Rows excluded because recent 24h window was incomplete: 230108
+2026-09-05 11:02:32,627 | INFO | [PASS] Incomplete historical windows are excluded instead of being filled with zero.
+2026-09-05 11:02:32,627 | INFO | 
+==========================================================================================
+2026-09-05 11:02:32,627 | INFO | [STEP 6] Joining next-hour activity
+2026-09-05 11:02:32,627 | INFO | ==========================================================================================
+2026-09-05 11:02:32,780 | INFO | [INFO] Rows after requiring an actual t+1 observation:
+2026-09-05 11:04:39,130 | INFO | [INFO] Labeled candidate rows: 1439885
+2026-09-05 11:04:39,130 | INFO | [PASS] Missing t+1 observations are excluded rather than treated as zero.
+2026-09-05 11:04:39,130 | INFO | 
+==========================================================================================
+2026-09-05 11:04:39,132 | INFO | [STEP 7] Creating high_activity_label
+2026-09-05 11:04:39,132 | INFO | ==========================================================================================
+2026-09-05 11:04:39,175 | INFO | 
+[INFO] Target definition:
+
+HIGH_ACTIVITY(t+1) = 1
+if:
+
+Activity(t+1) > 1.5 * Median(Activity(t-23:t))
+
+otherwise:
+
+HIGH_ACTIVITY(t+1) = 0
+
+2026-09-05 11:04:39,175 | INFO | 
+==========================================================================================
+2026-09-05 11:04:39,175 | INFO | [STEP 8] Validating target labels
+2026-09-05 11:04:39,175 | INFO | ==========================================================================================
+2026-09-05 11:04:39,175 | INFO | [INFO] Label distribution:
+2026-09-05 11:08:52,270 | INFO | [CHECK] Invalid labels: 0
+2026-09-05 11:08:52,270 | INFO | [CHECK] Null labels: 0
+2026-09-05 11:08:52,270 | INFO | [CHECK] Null target activities: 0
+2026-09-05 11:08:52,271 | INFO | [PASS] Target validation successful.
+2026-09-05 11:08:52,271 | INFO | 
+==========================================================================================
+2026-09-05 11:08:52,271 | INFO | [STEP 9] Calculating class balance and base rate
+2026-09-05 11:08:52,271 | INFO | ==========================================================================================
+2026-09-05 11:15:05,194 | INFO | [RESULT] Total labeled rows : 1439885
+2026-09-05 11:15:05,194 | INFO | [RESULT] Positive rows      : 161557
+2026-09-05 11:15:05,195 | INFO | [RESULT] Negative rows      : 1278328
+2026-09-05 11:15:05,195 | INFO | [RESULT] Positive base rate : 0.1122
+2026-09-05 11:15:05,195 | INFO | [RESULT] Negative rate      : 0.8878
+2026-09-05 11:15:05,195 | INFO | 
+[INFO] Detailed class distribution:
+2026-09-05 11:16:56,965 | INFO | 
+==========================================================================================
+2026-09-05 11:16:56,965 | INFO | [STEP 10] Creating final ML dataset
+2026-09-05 11:16:56,966 | INFO | ==========================================================================================
+2026-09-05 11:19:05,660 | INFO | [INFO] Final ML rows: 1199884
+2026-09-05 11:19:05,660 | INFO | [INFO] Final ML schema:
+2026-09-05 11:19:05,662 | INFO | 
+==========================================================================================
+2026-09-05 11:19:05,663 | INFO | [STEP 11] Final feature/label null check
+2026-09-05 11:19:05,663 | INFO | ==========================================================================================
+2026-09-05 11:21:15,760 | INFO | [PASS] Final dataset null check completed.
+2026-09-05 11:21:15,760 | INFO | 
+==========================================================================================
+2026-09-05 11:21:15,761 | INFO | [STEP 12] LEAKAGE TEST
+2026-09-05 11:21:15,761 | INFO | ==========================================================================================
+2026-09-05 11:21:15,761 | INFO | 
+[INFO] Leakage test principle:
+
+Features at time t may use:
+    t-47 ... t
+
+Features MUST NOT use:
+    t+1, t+2, ...
+
+We will compare feature calculations before and after
+artificially changing the t+1 activity.
+
+Expected:
+    All six features remain identical.
+    Only the target label may change.
+
+2026-09-05 11:23:36,009 | INFO | [INFO] Leakage test example: grid_id=1, t=2013-11-02 23:00:00
+2026-09-05 11:23:38,728 | INFO | [INFO] Original t+1 activity: 57.4846
+2026-09-05 11:23:38,729 | INFO | [INFO] Artificial t+1 activity for test: 5748.46
+2026-09-05 11:23:38,729 | INFO | [INFO] Rechecking feature values using data ending at t...
+2026-09-05 11:23:39,801 | INFO | 
+[RESULT] Feature differences after changing t+1:
+2026-09-05 11:23:39,803 | INFO |     avg_activity         difference = 0.0
+2026-09-05 11:23:39,803 | INFO |     activity_growth      difference = 0.0
+2026-09-05 11:23:39,804 | INFO |     active_hours         difference = 0
+2026-09-05 11:23:39,804 | INFO |     peak_ratio           difference = 0.0
+2026-09-05 11:23:39,805 | INFO |     variability          difference = 0.0
+2026-09-05 11:23:39,806 | INFO |     internet_share       difference = 0.0
+2026-09-05 11:23:39,806 | INFO | 
+[PASS] LEAKAGE TEST PASSED.
+2026-09-05 11:23:39,807 | INFO | [PASS] Changing t+1 activity does not change the six features at t.
+2026-09-05 11:23:39,807 | INFO | 
+==========================================================================================
+2026-09-05 11:23:39,808 | INFO | [STEP 13] Chronological train/test split
+2026-09-05 11:23:39,808 | INFO | ==========================================================================================
+2026-09-05 11:23:39,809 | INFO | [INFO] Using 80% earliest timestamps for training and 20% latest timestamps for testing.
+2026-09-05 11:25:45,844 | INFO | [INFO] Unique feature timestamps: 120
+2026-09-05 11:28:19,883 | INFO | [INFO] Training timestamp count: 96
+2026-09-05 11:28:19,883 | INFO | [INFO] Last training timestamp: 2013-11-06 22:00:00
+2026-09-05 11:28:19,925 | INFO | 
+==========================================================================================
+2026-09-05 11:28:19,925 | INFO | [STEP 14] Train/test timestamp report
+2026-09-05 11:28:19,925 | INFO | ==========================================================================================
+2026-09-05 11:32:48,939 | INFO | 
+TRAIN SET
+2026-09-05 11:32:48,939 | INFO |     Earliest timestamp : 2013-11-02 23:00:00
+2026-09-05 11:32:48,939 | INFO |     Latest timestamp   : 2013-11-06 22:00:00
+2026-09-05 11:32:48,939 | INFO |     Rows               : 959908
+2026-09-05 11:32:48,940 | INFO |     Timestamps         : 96
+2026-09-05 11:32:48,940 | INFO |     Grids              : 10000
+2026-09-05 11:32:48,940 | INFO | 
+TEST SET
+2026-09-05 11:32:48,940 | INFO |     Earliest timestamp : 2013-11-06 23:00:00
+2026-09-05 11:32:48,940 | INFO |     Latest timestamp   : 2013-11-07 22:00:00
+2026-09-05 11:32:48,941 | INFO |     Rows               : 239976
+2026-09-05 11:32:48,941 | INFO |     Timestamps         : 24
+2026-09-05 11:32:48,941 | INFO |     Grids              : 9999
+2026-09-05 11:32:48,941 | INFO | 
+[PASS] Chronological separation verified.
+2026-09-05 11:32:48,941 | INFO | 
+==========================================================================================
+2026-09-05 11:32:48,941 | INFO | [STEP 15] Train/test class balance
+2026-09-05 11:32:48,941 | INFO | ==========================================================================================
+2026-09-05 11:32:48,941 | INFO | [TRAIN]
+2026-09-05 11:34:52,390 | INFO | [TEST]
+2026-09-05 11:37:01,010 | INFO | 
+==========================================================================================
+2026-09-05 11:37:01,010 | INFO | [STEP 16] Preparing model features
+2026-09-05 11:37:01,011 | INFO | ==========================================================================================
+2026-09-05 11:37:01,012 | INFO | [INFO] Model input features:
+2026-09-05 11:37:01,012 | INFO |     - avg_activity
+2026-09-05 11:37:01,013 | INFO |     - activity_growth
+2026-09-05 11:37:01,013 | INFO |     - active_hours
+2026-09-05 11:37:01,014 | INFO |     - peak_ratio
+2026-09-05 11:37:01,014 | INFO |     - variability
+2026-09-05 11:37:01,015 | INFO |     - internet_share
+2026-09-05 11:37:01,086 | INFO | 
+==========================================================================================
+2026-09-05 11:37:01,086 | INFO | [STEP 17] Creating Decision Tree
+2026-09-05 11:37:01,087 | INFO | ==========================================================================================
+2026-09-05 11:37:01,150 | INFO | [INFO] maxDepth = 5
+2026-09-05 11:37:01,152 | INFO | [INFO] seed = 42
+2026-09-05 11:37:01,153 | INFO | 
+==========================================================================================
+2026-09-05 11:37:01,153 | INFO | [STEP 18] Training Decision Tree
+2026-09-05 11:37:01,154 | INFO | ==========================================================================================
+2026-09-05 11:37:01,154 | INFO | [INFO] Training started...
+2026-09-05 11:45:09,441 | INFO | [PASS] Model training completed.
+2026-09-05 11:45:09,441 | INFO | 
+==========================================================================================
+2026-09-05 11:45:09,442 | INFO | [STEP 19] Generating test predictions
+2026-09-05 11:45:09,443 | INFO | ==========================================================================================
+2026-09-05 11:47:24,606 | INFO | [INFO] Test predictions generated: 239976
+2026-09-05 11:47:24,607 | INFO | [INFO] Sample predictions:
+2026-09-05 11:50:21,776 | INFO | Closing down clientserver connection

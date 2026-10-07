@@ -1,0 +1,152 @@
+{
+    "project": "Telecom Network Operations & Predictive Intelligence",
+    "model_name": "ML3 High Activity Risk Decision Tree",
+    "model_purpose": "Predict whether the next hourly interval for a grid will experience unusually high telecom activity.",
+    "prediction_unit": "one grid + one hourly interval",
+    "prediction_horizon": "next_hour",
+    "target_column": "high_activity",
+    "target_definition": "high_activity = 1 when target_activity > 1.5 * trailing_median_24h",
+    "target_threshold_multiplier": 1.5,
+    "target_interpretation": "Synthetic training proxy for unusually high activity; not a confirmed network congestion threshold.",
+    "business_action": "investigate",
+    "operational_interpretation": "A positive prediction indicates high-activity risk and should be investigated. It does not confirm network congestion.",
+    "primary_model": {
+        "algorithm": "DecisionTreeClassifier",
+        "selection_reason": "Selected as primary model because it outperformed the Logistic Regression benchmark on the chronological hold-out test set across accuracy, precision, recall, F1, ROC-AUC and PR-AUC.",
+        "parameters": {
+            "max_depth": 5,
+            "min_samples_leaf": 100,
+            "class_weight": "balanced",
+            "random_state": 42
+        }
+    },
+    "secondary_model": {
+        "algorithm": "LogisticRegression",
+        "role": "benchmark",
+        "description": "Log-transformed Logistic Regression retained as a secondary benchmark model."
+    },
+    "features": [
+        "avg_activity",
+        "activity_growth",
+        "peak_ratio",
+        "variability",
+        "internet_share",
+        "trailing_median_24h",
+        "hour_of_day",
+        "day_of_week"
+    ],
+    "excluded_features": {
+        "active_hours": "Excluded from model input because it had zero variance and was constant at 24 for retained feature windows.",
+        "target_activity": "Excluded because it represents the next-hour target value and would cause data leakage.",
+        "target_timestamp": "Excluded because it identifies the prediction target time and is not a predictive feature.",
+        "high_activity": "Excluded from model inputs because it is the target label."
+    },
+    "feature_importance": {
+        "method": "Decision Tree impurity-based feature importance (feature_importances_)",
+        "features": [
+            {
+                "feature": "peak_ratio",
+                "importance": 0.49589257407134646,
+                "importance_percentage": 49.589257407134646
+            },
+            {
+                "feature": "hour_of_day",
+                "importance": 0.4448399659744906,
+                "importance_percentage": 44.483996597449064
+            },
+            {
+                "feature": "day_of_week",
+                "importance": 0.040954135577666424,
+                "importance_percentage": 4.095413557766642
+            },
+            {
+                "feature": "activity_growth",
+                "importance": 0.012032432199077061,
+                "importance_percentage": 1.203243219907706
+            },
+            {
+                "feature": "internet_share",
+                "importance": 0.003159477544457338,
+                "importance_percentage": 0.3159477544457338
+            },
+            {
+                "feature": "variability",
+                "importance": 0.0016853739565398649,
+                "importance_percentage": 0.16853739565398648
+            },
+            {
+                "feature": "trailing_median_24h",
+                "importance": 0.0014360406764222155,
+                "importance_percentage": 0.14360406764222156
+            },
+            {
+                "feature": "avg_activity",
+                "importance": 0.0,
+                "importance_percentage": 0.0
+            }
+        ],
+        "top_two_combined_importance": 0.9407325400458371,
+        "top_two_combined_percentage": 94.0732540045837,
+        "dominant_features": [
+            "peak_ratio",
+            "hour_of_day"
+        ],
+        "interpretation": "peak_ratio and hour_of_day were the dominant predictors used by the Decision Tree. Together they accounted for 94.07% of total impurity-based feature importance.",
+        "caution": "Feature importance indicates predictive contribution within the trained tree and does not imply causation."
+    },
+    "test_metrics": {
+        "accuracy": 0.8585400206687336,
+        "precision": 0.3399626003739963,
+        "recall": 0.7966285184039592,
+        "f1": 0.4765546697916827,
+        "roc_auc": 0.8984416122122348,
+        "pr_auc": 0.366067416140995
+    },
+    "logistic_regression_benchmark_metrics": {
+        "accuracy": 0.8213279661299463,
+        "precision": 0.273355599745159,
+        "recall": 0.7299206103722033,
+        "f1": 0.3977526511693237,
+        "roc_auc": 0.862595127771663,
+        "pr_auc": 0.32362298875751255
+    },
+    "model_comparison": {
+        "primary_model": "Decision Tree",
+        "benchmark_model": "Logistic Regression",
+        "primary_selection_metric": "F1",
+        "primary_selection_reason": "Decision Tree achieved higher F1 and PR-AUC while also providing higher precision and recall on the untouched chronological test set."
+    },
+    "validation": {
+        "split_strategy": "chronological",
+        "test_set_untouched_during_tuning": true,
+        "leakage_checks_passed": true,
+        "threshold_tuning_performed": true,
+        "selected_classification_threshold": 0.5
+    },
+    "data_split": {
+        "strategy": "chronological 80/20 split",
+        "training_period": "2013-11-02T23:00:00.000000 to 2013-11-06T22:00:00.000000",
+        "test_period": "2013-11-06T23:00:00.000000 to 2013-11-07T22:00:00.000000"
+    },
+    "feature_engineering": {
+        "added_features": [
+            "trailing_median_24h",
+            "hour_of_day",
+            "day_of_week"
+        ],
+        "log_transformed_features": [
+            "avg_activity",
+            "peak_ratio",
+            "variability",
+            "trailing_median_24h"
+        ],
+        "standardized_features": [
+            "activity_growth",
+            "internet_share"
+        ]
+    },
+    "model_artifact": {
+        "path": "models/ml3_high_activity_decision_tree.joblib",
+        "format": "joblib"
+    }
+}

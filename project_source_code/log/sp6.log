@@ -1,0 +1,81 @@
+2026-08-27 22:52:35 | INFO | ============================================================
+2026-08-27 22:52:35 | INFO | SP6 START
+2026-08-27 22:52:35 | INFO | ============================================================
+2026-08-27 22:52:37 | INFO | Required input DataFrames are available
+2026-08-27 22:52:40 | INFO | Clean activity input rows: 15089165
+2026-08-27 22:52:40 | INFO | Hourly grid summary input rows: 1679994
+2026-08-27 22:52:40 | INFO | Date column available for partitioning: PASS
+2026-08-27 22:53:01 | INFO | Clean activity written as Parquet: ..\data\curated\clean_activity_parquet
+2026-08-27 22:53:01 | INFO | Clean activity Parquet partitioned by date
+2026-08-27 22:53:04 | INFO | Duplicate grid + timestamp groups: 0
+2026-08-27 22:53:04 | INFO | One record per grid + hour validation: PASS
+2026-08-27 22:53:04 | INFO | Geometry separation validation: PASS
+2026-08-27 22:53:17 | INFO | hourly_grid_summary written as Parquet: ..\data\curated\hourly_grid_summary_parquet
+2026-08-27 22:53:17 | INFO | Static GeoJSON retained separately at: ..\data\reference\milano-grid.geojson
+2026-08-27 22:53:18 | INFO | Dashboard summary rows: 168
+2026-08-27 22:53:31 | INFO | Dashboard summary written as CSV: ..\data\dashboard\dashboard_summary
+2026-08-27 22:53:32 | INFO | Clean activity Parquet rows read back: 15089165
+2026-08-27 22:53:32 | INFO | Clean activity Parquet count validation: PASS
+2026-08-27 22:53:32 | INFO | Hourly grid Parquet rows read back: 1679994
+2026-08-27 22:53:32 | INFO | Hourly grid Parquet count validation: PASS
+2026-08-27 22:53:32 | INFO | Clean activity Parquet schema inspected
+2026-08-27 22:53:32 | INFO | Hourly grid Parquet schema inspected
+2026-08-27 22:53:32 | INFO | Clean activity schema validation: FAIL
+2026-08-27 22:53:32 | INFO | Hourly grid schema validation: PASS
+2026-08-27 22:53:32 | INFO | Closing down clientserver connection
+2026-08-27 22:57:17 | INFO | ============================================================
+2026-08-27 22:57:17 | INFO | SP6 START
+2026-08-27 22:57:17 | INFO | ============================================================
+2026-08-27 22:57:18 | INFO | Required input DataFrames are available
+2026-08-27 22:57:20 | INFO | Clean activity input rows: 15089165
+2026-08-27 22:57:20 | INFO | Hourly grid summary input rows: 1679994
+2026-08-27 22:57:20 | INFO | Date column available for partitioning: PASS
+2026-08-27 22:57:43 | INFO | Clean activity written as Parquet: ..\data\curated\clean_activity_parquet
+2026-08-27 22:57:43 | INFO | Clean activity Parquet partitioned by date
+2026-08-27 22:57:46 | INFO | Duplicate grid + timestamp groups: 0
+2026-08-27 22:57:46 | INFO | One record per grid + hour validation: PASS
+2026-08-27 22:57:46 | INFO | Geometry separation validation: PASS
+2026-08-27 22:58:00 | INFO | hourly_grid_summary written as Parquet: ..\data\curated\hourly_grid_summary_parquet
+2026-08-27 22:58:00 | INFO | Static GeoJSON retained separately at: ..\data\reference\milano-grid.geojson
+2026-08-27 22:58:01 | INFO | Dashboard summary rows: 168
+2026-08-27 22:58:14 | INFO | Dashboard summary written as CSV: ..\data\dashboard\dashboard_summary
+2026-08-27 22:58:14 | INFO | Clean activity Parquet rows read back: 15089165
+2026-08-27 22:58:14 | INFO | Clean activity Parquet count validation: PASS
+2026-08-27 22:58:15 | INFO | Hourly grid Parquet rows read back: 1679994
+2026-08-27 22:58:15 | INFO | Hourly grid Parquet count validation: PASS
+2026-08-27 22:58:15 | INFO | Clean activity Parquet schema inspected
+2026-08-27 22:58:15 | INFO | Hourly grid Parquet schema inspected
+2026-08-27 22:58:15 | INFO | Clean activity schema validation: FAIL
+2026-08-27 22:58:15 | INFO | Hourly grid schema validation: PASS
+2026-08-27 22:58:15 | INFO | Distinct date partitions in clean activity Parquet: 7
+2026-08-27 22:58:15 | INFO | Clean activity Parquet size: 312.49 MB
+2026-08-27 22:58:15 | INFO | Hourly grid Parquet size: 67.14 MB
+2026-08-27 22:58:49 | INFO | Equivalent CSV comparison size: 2352.46 MB
+2026-08-27 22:58:49 | INFO | Parquet size: 312.49 MB
+2026-08-27 22:58:49 | INFO | Parquet/CSV size ratio: 0.133
+2026-08-27 22:58:49 | INFO | Approximate storage reduction using Parquet: 86.72%
+2026-08-27 22:58:49 | INFO | Temporary CSV comparison output removed
+2026-08-27 22:58:49 | INFO | COLUMNAR STORAGE OBSERVATION: Parquet stores data column-wise, allowing Spark to read only the columns required by a query instead of scanning every field.
+2026-08-27 22:58:49 | INFO | COLUMNAR STORAGE OBSERVATION: Parquet supports compression and efficient encoding, which can reduce storage size and I/O compared with plain CSV.
+2026-08-27 22:58:49 | INFO | COLUMNAR STORAGE OBSERVATION: The observed Parquet size was 312.49 MB compared with 2352.46 MB for the equivalent CSV representation.
+2026-08-27 22:58:49 | INFO | PARTITIONING OBSERVATION: Clean activity data is partitioned by date, allowing downstream queries restricted to specific dates to avoid scanning unnecessary date partitions.
+2026-08-27 22:58:49 | INFO | GEOMETRY STORAGE OBSERVATION: Full Polygon geometry is retained in the static milano-grid.geojson reference rather than duplicated across every hourly analytics record.
+2026-08-27 22:58:49 | INFO | Final SP6 validation status: REVIEW
+2026-08-27 22:58:49 | INFO | ============================================================
+2026-08-27 22:58:49 | INFO | SP6 FINAL SUMMARY
+2026-08-27 22:58:49 | INFO | ============================================================
+2026-08-27 22:58:49 | INFO | Clean activity Parquet: CREATED
+2026-08-27 22:58:49 | INFO | Clean activity partitioning: date
+2026-08-27 22:58:49 | INFO | hourly_grid_summary Parquet: CREATED
+2026-08-27 22:58:49 | INFO | Hourly grid uniqueness: one record per grid_id + timestamp
+2026-08-27 22:58:49 | INFO | Geometry duplication in analytics: NOT PRESENT
+2026-08-27 22:58:49 | INFO | Static GeoJSON reference: RETAINED
+2026-08-27 22:58:49 | INFO | Dashboard CSV: CREATED
+2026-08-27 22:58:49 | INFO | Clean activity read-back count validation: PASS
+2026-08-27 22:58:49 | INFO | Hourly grid read-back count validation: PASS
+2026-08-27 22:58:49 | INFO | Clean activity schema validation: FAIL
+2026-08-27 22:58:49 | INFO | Hourly grid schema validation: PASS
+2026-08-27 22:58:49 | INFO | Parquet columnar storage comparison completed
+2026-08-27 22:58:49 | INFO | SP6 STATUS: REVIEW
+2026-08-27 22:58:49 | INFO | ============================================================
+2026-08-27 22:58:49 | INFO | Closing down clientserver connection

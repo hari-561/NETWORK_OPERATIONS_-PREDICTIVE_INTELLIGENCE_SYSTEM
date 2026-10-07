@@ -1,0 +1,31 @@
+{
+    "phase": "Phase 2",
+    "step": "SP2",
+    "status": "PASS",
+    "row_counts": {
+        "before_cleaning": 15089165,
+        "rejected": 0,
+        "after_cleaning": 15089165
+    },
+    "activity_nulls": {
+        "sms_in": 9065620,
+        "sms_out": 11542655,
+        "call_in": 10979856,
+        "call_out": 8604862,
+        "internet_activity": 8369201,
+        "total": 48562194
+    },
+    "validation": {
+        "row_count_check": true,
+        "hourly_cadence_check": true,
+        "cadence_violations": 0
+    },
+    "derived_columns": [
+        "total_sms",
+        "total_calls",
+        "total_activity",
+        "date",
+        "hour",
+        "day_of_week"
+    ]
+}

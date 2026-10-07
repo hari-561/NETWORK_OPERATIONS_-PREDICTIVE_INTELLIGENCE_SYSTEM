@@ -1,0 +1,80 @@
+
+cd airflow_test
+source airflow_env/bin/activate 
+export AIRFLOW_HOME=/mnt/d/capstone1/airflow
+
+
+
+
+http://localhost:8080 
+
+
+
+
+echo $AIRFLOW_HOME
+
+airflow config get-value core dags_folder
+
+airflow dags list-import-errors
+
+ls -l /mnt/c/Users/Admin/Desktop/network/network-p3/airflow/dags
+
+airflow dags list
+
+airflow dags show telecom_ingestion_de2
+
+
+source ~/airflow_test/airflow_env/bin/activate
+
+export AIRFLOW_HOME=/mnt/c/Users/Admin/Desktop/network/network-p3/airflow
+
+airflow scheduler
+
+
+airflow dags list
+
+
+
+
+
+
+
+
+python -c "
+from airflow.models.dagbag import DagBag
+db = DagBag('/mnt/c/Users/Admin/Desktop/network/network-p3/airflow/dags', include_examples=False)
+print('DAGS:', list(db.dags.keys()))
+print('ERRORS:', db.import_errors)
+"
+
+
+
+export AIRFLOW_HOME=/mnt/c/Users/Admin/Desktop/network/network-p3/airflow
+
+python -c "
+from airflow.dag_processing.dagbag import DagBag
+db = DagBag('/mnt/c/Users/Admin/Desktop/network/network-p3/airflow/dags')
+print('DAGS:', list(db.dags.keys()))
+print('ERRORS:', db.import_errors)
+"
+find $AIRFLOW_HOME/logs -type f | tail -20
+
+
+grep -R "telecom_ingestion" $AIRFLOW_HOME/logs
+
+
+airflow db check
+
+airflow dags report | grep telecom
+
+
+airflow info | grep airflow
+airflow info | grep dags
+
+
+airflow dags reserialize
+
+
+airflow dags list
+
+airflow db shell

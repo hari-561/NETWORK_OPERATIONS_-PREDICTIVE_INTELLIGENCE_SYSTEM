@@ -1,0 +1,65 @@
+
+2026-08-28 02:06:28 | INFO | ============================================================
+2026-08-28 02:06:28 | INFO | TELECOM PIPELINE START
+2026-08-28 02:06:28 | INFO | Start time: 2026-08-28 02:06:28.537636
+2026-08-28 02:06:28 | INFO | ============================================================
+2026-08-28 02:06:35 | INFO | SparkSession created
+2026-08-28 02:06:35 | INFO | Starting read_raw()
+2026-08-28 02:06:35 | INFO | Input files found: 7
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-01.csv
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-02.csv
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-03.csv
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-04.csv
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-05.csv
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-06.csv
+2026-08-28 02:06:35 | INFO | Input file: ..\data\raw\sms-call-internet-mi-2013-11-07.csv
+2026-08-28 02:06:38 | INFO | Raw input rows: 15089165
+2026-08-28 02:06:38 | INFO | read_raw() completed
+2026-08-28 02:06:38 | INFO | Starting clean()
+2026-08-28 02:06:43 | INFO | Activity nulls - sms_in: 9065620
+2026-08-28 02:06:43 | INFO | Activity nulls - sms_out: 11542655
+2026-08-28 02:06:43 | INFO | Activity nulls - call_in: 10979856
+2026-08-28 02:06:43 | INFO | Activity nulls - call_out: 8604862
+2026-08-28 02:06:43 | INFO | Activity nulls - internet_activity: 8369201
+2026-08-28 02:06:43 | INFO | Total activity nulls before null-to-zero rule: 48562194
+2026-08-28 02:06:48 | INFO | Rejected rows: 0
+2026-08-28 02:07:00 | INFO | Cleaned rows: 15089165
+2026-08-28 02:07:00 | INFO | Null activity values handled: 48562194
+2026-08-28 02:07:00 | INFO | clean() completed
+2026-08-28 02:07:00 | INFO | Starting aggregate()
+2026-08-28 02:07:11 | INFO | Peak activity hour: 2013-11-07 14:00:00 | activity=7941600.065800001
+2026-08-28 02:07:20 | INFO | hourly_grid_summary rows: 1679994
+2026-08-28 02:07:20 | INFO | aggregate() completed
+2026-08-28 02:07:20 | INFO | Starting enrich()
+2026-08-28 02:07:21 | INFO | Grid lookup rows: 10000
+2026-08-28 02:07:42 | INFO | Distinct activity grids before enrichment: 10000
+2026-08-28 02:07:42 | INFO | Distinct activity grids after enrichment: 10000
+2026-08-28 02:07:42 | INFO | Grids missing geometry: 0
+2026-08-28 02:07:42 | INFO | Geometry enrichment coverage: 100.00%
+2026-08-28 02:07:50 | INFO | Unmatched grid IDs: 0
+2026-08-28 02:07:50 | INFO | Top high-activity grids with geometry prepared
+2026-08-28 02:07:50 | INFO | enrich() completed
+2026-08-28 02:07:50 | INFO | Starting write_outputs()
+2026-08-28 02:07:50 | INFO | About to write clean activity Parquet: ..\data\curated\clean_activity_parquet
+2026-08-28 02:07:50 | INFO | Clean activity columns: ['timestamp', 'grid_id', 'country_code', 'sms_in', 'sms_out', 'call_in', 'call_out', 'internet_activity', '_source_file', 'total_sms', 'total_calls', 'total_activity', 'date', 'hour', 'day_of_week']
+2026-08-28 02:07:50 | INFO | Clean activity schema:
+2026-08-28 02:08:33 | INFO | Clean activity Parquet write: SUCCESS
+2026-08-28 02:08:33 | INFO | Clean activity Parquet written: ..\data\curated\clean_activity_parquet
+2026-08-28 02:08:47 | INFO | hourly_grid_summary Parquet written: ..\data\curated\hourly_grid_summary_parquet
+2026-08-28 02:08:52 | INFO | Dashboard CSV written: ..\data\curated\dashboard_summary
+2026-08-28 02:08:54 | INFO | Clean output rows: 15089165
+2026-08-28 02:08:54 | INFO | Expected clean rows: 15089165
+2026-08-28 02:08:54 | INFO | Hourly output rows: 1679994
+2026-08-28 02:08:54 | INFO | Expected hourly rows: 1679994
+2026-08-28 02:08:54 | INFO | Parquet read-back validation: PASS
+2026-08-28 02:08:54 | INFO | write_outputs() completed
+2026-08-28 02:08:54 | INFO | Input rows: 15089165
+2026-08-28 02:08:54 | INFO | Rejected rows: 0
+2026-08-28 02:08:54 | INFO | Activity nulls handled: 48562194
+2026-08-28 02:08:54 | INFO | Output rows: 1679994
+2026-08-28 02:08:54 | INFO | End time: 2026-08-28 02:08:54.417547
+2026-08-28 02:08:54 | INFO | Duration seconds: 145.88
+2026-08-28 02:08:54 | INFO | FINAL STATUS: SUCCESS
+2026-08-28 02:08:54 | INFO | ============================================================
+2026-08-28 02:08:55 | INFO | SparkSession stopped
+2026-08-28 02:08:55 | INFO | Closing down clientserver connection

@@ -1,0 +1,178 @@
+{"timestamp":"2026-09-03T20:15:20.636931Z","level":"info","event":"::group::Pre Execute","logger":"task","filename":"task_runner.py","lineno":2412}
+{"timestamp":"2026-09-03T20:15:21.297901Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags, apache-airflow-providers-common-sql-example-dags, apache-airflow-providers-standard-example-dags","run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","dag_id":"telecom_end_to_end_de7","try_number":1,"logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":304}
+{"timestamp":"2026-09-03T20:15:21.304988Z","level":"info","event":"Filling up the DagBag from /mnt/d/capstone1/airflow/dags/telecom_end_to_end_de7.py","run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","dag_id":"telecom_end_to_end_de7","try_number":1,"logger":"airflow.dag_processing.dagbag.BundleDagBag","filename":"dagbag.py","lineno":460}
+{"timestamp":"2026-09-03T20:15:22.799178Z","level":"info","event":"Worker startup parse complete","bundle_name":"dags-folder","bundle_version":null,"dag_file":"telecom_end_to_end_de7.py","dag_id":"telecom_end_to_end_de7","bundle_prepare_ms":14,"dag_file_parse_ms":1494,"run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","try_number":1,"logger":"task","filename":"task_runner.py","lineno":1073}
+{"timestamp":"2026-09-03T20:15:22.842942Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.844237Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.845648Z","level":"info","event":"Current task name:load_warehouse","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.846514Z","level":"info","event":"Dag name:telecom_end_to_end_de7","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.847447Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.848338Z","level":"info","event":"TASK: LOAD WAREHOUSE","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.843248Z","level":"info","event":"::endgroup::","run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","dag_id":"telecom_end_to_end_de7","try_number":1,"logger":"task","filename":"task_runner.py","lineno":2232}
+{"timestamp":"2026-09-03T20:15:22.850269Z","level":"info","event":"======================================================================","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.852043Z","level":"info","event":"Running warehouse loader:","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:22.853122Z","level":"info","event":"/home/harikumarg/airflow_test/airflow_env/bin/python3 /mnt/d/capstone1/src/warehouse_loader.py --hourly /mnt/d/capstone1/data/processed/hourly_grid_summary_parquet --geojson /mnt/d/capstone1/data/reference/milano-grid.geojson","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:23.869793Z","level":"error","event":"2026-09-03 20:15:23,869 | INFO | Connecting to MySQL warehouse","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.162910Z","level":"error","event":"2026-09-03 20:15:24,162 | INFO | Closing warehouse resources","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.164662Z","level":"error","event":"2026-09-03 20:15:24,163 | INFO | MySQL engine disposed","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.165954Z","level":"error","event":"2026-09-03 20:15:24,163 | INFO | All warehouse resources closed","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.190352Z","level":"error","event":"Traceback (most recent call last):","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.204503Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 144, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.207473Z","level":"error","event":"    self._dbapi_connection = engine.raw_connection()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.212162Z","level":"error","event":"                             ~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.216123Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 3319, in raw_connection","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.219988Z","level":"error","event":"    return self.pool.connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.223911Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.228357Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 448, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.232620Z","level":"error","event":"    return _ConnectionFairy._checkout(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.235876Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.238239Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 1272, in _checkout","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.239675Z","level":"error","event":"    fairy = _ConnectionRecord.checkout(pool)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.245646Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 712, in checkout","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.250107Z","level":"error","event":"    rec = pool._do_get()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.252322Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/impl.py\", line 178, in _do_get","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.254081Z","level":"error","event":"    with util.safe_reraise():","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.255475Z","level":"error","event":"         ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.256957Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py\", line 122, in __exit__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.258414Z","level":"error","event":"    raise exc_value.with_traceback(exc_tb)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.260048Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/impl.py\", line 176, in _do_get","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.261740Z","level":"error","event":"    return self._create_connection()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.263247Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.264577Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 389, in _create_connection","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.266013Z","level":"error","event":"    return _ConnectionRecord(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.267220Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 674, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.268566Z","level":"error","event":"    self.__connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.270296Z","level":"error","event":"    ~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.272284Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 900, in __connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.273913Z","level":"error","event":"    with util.safe_reraise():","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.275195Z","level":"error","event":"         ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.277317Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py\", line 122, in __exit__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.278827Z","level":"error","event":"    raise exc_value.with_traceback(exc_tb)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.280285Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 896, in __connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.281772Z","level":"error","event":"    self.dbapi_connection = connection = pool._invoke_creator(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.283407Z","level":"error","event":"                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.284741Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/create.py\", line 667, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.286283Z","level":"error","event":"    return dialect.connect(*cargs_tup, **cparams)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.287821Z","level":"error","event":"           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.289258Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/default.py\", line 630, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.290690Z","level":"error","event":"    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.292347Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.293680Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 372, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.295485Z","level":"error","event":"    self.connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.297113Z","level":"error","event":"    ~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.298471Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 702, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.300026Z","level":"error","event":"    self._request_authentication()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.301307Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.303000Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 1022, in _request_authentication","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.304707Z","level":"error","event":"    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.306168Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/_auth.py\", line 245, in caching_sha2_password_auth","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.307583Z","level":"error","event":"    pkt = conn._read_packet()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.309161Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 803, in _read_packet","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.311124Z","level":"error","event":"    packet.raise_for_error()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.312616Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.314390Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/protocol.py\", line 219, in raise_for_error","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.316051Z","level":"error","event":"    err.raise_mysql_exception(self._data)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.317948Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.319521Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/err.py\", line 154, in raise_mysql_exception","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.321320Z","level":"error","event":"    raise errorclass(errno, errval, sqlstate=sqlstate)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.323404Z","level":"error","event":"pymysql.err.OperationalError: (1044, \"Access denied for user 'root'@'172.19.%' to database 'telecom_analytics'\")","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.324729Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.326160Z","level":"error","event":"The above exception was the direct cause of the following exception:","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.327411Z","level":"error","event":"","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.328839Z","level":"error","event":"Traceback (most recent call last):","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.330149Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1305, in <module>","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.331291Z","level":"error","event":"    main()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.332949Z","level":"error","event":"    ~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.334095Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1301, in main","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.335620Z","level":"error","event":"    loader.run()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.337218Z","level":"error","event":"    ~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.338984Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 1252, in run","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.340570Z","level":"error","event":"    self.connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.341720Z","level":"error","event":"    ~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.343192Z","level":"error","event":"  File \"/mnt/d/capstone1/src/warehouse_loader.py\", line 172, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.344570Z","level":"error","event":"    with self.engine.begin() as conn:","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.345755Z","level":"error","event":"         ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.346994Z","level":"error","event":"  File \"/usr/lib/python3.14/contextlib.py\", line 141, in __enter__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.348569Z","level":"error","event":"    return next(self.gen)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.350147Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 3259, in begin","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.351726Z","level":"error","event":"    with self.connect() as conn:","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.353041Z","level":"error","event":"         ~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.354343Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 3295, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.355495Z","level":"error","event":"    return self._connection_cls(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.356778Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.358030Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 146, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.359020Z","level":"error","event":"    Connection._handle_dbapi_exception_noconnection(","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.360309Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.361662Z","level":"error","event":"        err, dialect, engine","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.363018Z","level":"error","event":"        ^^^^^^^^^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.364364Z","level":"error","event":"    )","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.365382Z","level":"error","event":"    ^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.366742Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 2450, in _handle_dbapi_exception_noconnection","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.367970Z","level":"error","event":"    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.369012Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 144, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.370080Z","level":"error","event":"    self._dbapi_connection = engine.raw_connection()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.371541Z","level":"error","event":"                             ~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.373039Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/base.py\", line 3319, in raw_connection","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.374452Z","level":"error","event":"    return self.pool.connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.376065Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.377875Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 448, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.379537Z","level":"error","event":"    return _ConnectionFairy._checkout(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.381054Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.382880Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 1272, in _checkout","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.384299Z","level":"error","event":"    fairy = _ConnectionRecord.checkout(pool)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.385851Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 712, in checkout","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.387662Z","level":"error","event":"    rec = pool._do_get()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.389358Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/impl.py\", line 178, in _do_get","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.391328Z","level":"error","event":"    with util.safe_reraise():","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.393188Z","level":"error","event":"         ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.394708Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py\", line 122, in __exit__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.396329Z","level":"error","event":"    raise exc_value.with_traceback(exc_tb)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.398114Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/impl.py\", line 176, in _do_get","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.399985Z","level":"error","event":"    return self._create_connection()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.401437Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.402941Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 389, in _create_connection","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.404137Z","level":"error","event":"    return _ConnectionRecord(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.405536Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 674, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.407216Z","level":"error","event":"    self.__connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.408861Z","level":"error","event":"    ~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.410675Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 900, in __connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.412464Z","level":"error","event":"    with util.safe_reraise():","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.414138Z","level":"error","event":"         ~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.415622Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py\", line 122, in __exit__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.417101Z","level":"error","event":"    raise exc_value.with_traceback(exc_tb)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.418963Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/pool/base.py\", line 896, in __connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.420861Z","level":"error","event":"    self.dbapi_connection = connection = pool._invoke_creator(self)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.422394Z","level":"error","event":"                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.423883Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/create.py\", line 667, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.425561Z","level":"error","event":"    return dialect.connect(*cargs_tup, **cparams)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.427547Z","level":"error","event":"           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.429466Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/sqlalchemy/engine/default.py\", line 630, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.431116Z","level":"error","event":"    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.432789Z","level":"error","event":"           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.434493Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 372, in __init__","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.436074Z","level":"error","event":"    self.connect()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.438194Z","level":"error","event":"    ~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.439994Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 702, in connect","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.441423Z","level":"error","event":"    self._request_authentication()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.443026Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.444535Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 1022, in _request_authentication","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.446191Z","level":"error","event":"    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.447771Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/_auth.py\", line 245, in caching_sha2_password_auth","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.449480Z","level":"error","event":"    pkt = conn._read_packet()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.450475Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/connections.py\", line 803, in _read_packet","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.451916Z","level":"error","event":"    packet.raise_for_error()","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.453383Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.454870Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/protocol.py\", line 219, in raise_for_error","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.456358Z","level":"error","event":"    err.raise_mysql_exception(self._data)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.457832Z","level":"error","event":"    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.459472Z","level":"error","event":"  File \"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/pymysql/err.py\", line 154, in raise_mysql_exception","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.461821Z","level":"error","event":"    raise errorclass(errno, errval, sqlstate=sqlstate)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.464293Z","level":"error","event":"sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1044, \"Access denied for user 'root'@'172.19.%' to database 'telecom_analytics'\")","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.465979Z","level":"error","event":"(Background on this error at: https://sqlalche.me/e/20/e3q8)","logger":"task.stderr"}
+{"timestamp":"2026-09-03T20:15:24.536254Z","level":"error","event":"Task failed with exception","run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","dag_id":"telecom_end_to_end_de7","try_number":1,"logger":"task","filename":"task_runner.py","lineno":1676,"error_detail":[{"exc_type":"RuntimeError","exc_value":"warehouse_loader.py failed with exit code 1","exc_notes":[],"syntax_error":null,"is_cause":false,"frames":[{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":1579,"name":"_run_task_and_map_outcome"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":197,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":2234,"name":"_execute_task"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":197,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":2192,"name":"_run_execute_callable"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/bases/operator.py","lineno":445,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/bases/decorator.py","lineno":398,"name":"execute"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/bases/operator.py","lineno":445,"name":"wrapper"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/providers/standard/operators/python.py","lineno":231,"name":"execute"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/providers/standard/operators/python.py","lineno":254,"name":"execute_callable"},{"filename":"/home/harikumarg/airflow_test/airflow_env/lib/python3.14/site-packages/airflow/sdk/execution_time/callback_runner.py","lineno":97,"name":"run"},{"filename":"/mnt/d/capstone1/airflow/dags/telecom_end_to_end_de7.py","lineno":646,"name":"load_warehouse"}],"is_group":false,"exceptions":[]}]}
+{"timestamp":"2026-09-03T20:15:24.536784Z","level":"info","event":"::group::Post Execute","run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","dag_id":"telecom_end_to_end_de7","try_number":1,"logger":"task","filename":"task_runner.py","lineno":1677}
+{"timestamp":"2026-09-03T20:15:24.541915Z","level":"info","event":"Task instance in failure state","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:24.544216Z","level":"info","event":"Task start","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:24.546358Z","level":"info","event":"Task:<Task(_PythonDecoratedOperator): load_warehouse>","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:24.548374Z","level":"info","event":"Failure caused by warehouse_loader.py failed with exit code 1","logger":"task.stdout"}
+{"timestamp":"2026-09-03T20:15:24.542365Z","level":"info","event":"::endgroup::","run_id":"manual__2026-09-03T20:00:02.277995+00:00","ti_id":"01a068e5-8752-7608-bd48-1385683be4da","map_index":-1,"task_id":"load_warehouse","dag_id":"telecom_end_to_end_de7","try_number":1,"logger":"task","filename":"task_runner.py","lineno":2379}
